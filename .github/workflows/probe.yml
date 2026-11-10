@@ -1,19 +1,56 @@
-name: probe
+name: arm-hunt
 
 on:
   push:
     branches: [probe]
 
+env:
+  APK_URL: https://github.com/iTomKo/Outify/releases/download/2.0.0/app-universal-release.apk
+
 jobs:
-  mac-latest:
-    runs-on: macos-latest
-    steps:
-      - run: uname -m; sw_vers
-  mac-15:
+  arm:
     runs-on: macos-15
+    timeout-minutes: 60
     steps:
-      - run: uname -m; sw_vers
-  arm-linux:
-    runs-on: ubuntu-24.04-arm
-    steps:
-      - run: uname -m; ls -l /dev/kvm || echo no-kvm
+      - uses: actions/checkout@v4
+
+      - name: timeout shim (macOS has no coreutils timeout)
+        run: |
+          mkdir -p "$HOME/bin"
+          cat > "$HOME/bin/timeout" <<'EOF'
+          #!/bin/bash
+          t=$1; shift
+          "$@" &
+          p=$!
+          ( sleep "$t"; kill -9 $p 2>/dev/null ) &
+          w=$!
+          wait $p; rc=$?
+          kill $w 2>/dev/null
+          exit $rc
+          EOF
+          chmod +x "$HOME/bin/timeout"
+          echo "$HOME/bin" >> "$GITHUB_PATH"
+
+      - name: Fetch latest Outify APK
+        run: |
+          curl -sSL --retry 3 -o outify.apk "$APK_URL"
+          ls -l outify.apk
+
+      - name: Hunt for crashes on android-14-arm64
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          target: google_apis
+          arch: arm64-v8a
+          profile: pixel_6
+          disable-animations: true
+          emulator-options: -no-window -no-audio -no-boot-anim -no-snapshot-save -camera-back none -camera-front none
+          script: bash scripts/hunt.sh android-14-arm64
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: arm-hunt
+          path: out/android-14-arm64
+          if-no-files-found: warn
