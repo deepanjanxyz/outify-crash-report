@@ -1,0 +1,111 @@
+name: crash-hunt
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  APK_URL: https://github.com/iTomKo/Outify/releases/download/2.0.0/app-universal-release.apk
+
+jobs:
+  hunt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - api: 30
+            label: android-11
+          - api: 33
+            label: android-13
+          - api: 34
+            label: android-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+          ls -l /dev/kvm
+
+      - name: Fetch latest Outify APK
+        run: |
+          curl -sSL --retry 3 -o outify.apk "$APK_URL"
+          ls -l outify.apk
+
+      - name: Hunt for crashes on ${{ matrix.label }}
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: ${{ matrix.api }}
+          target: google_apis
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          emulator-options: -no-window -no-audio -no-boot-anim -gpu swiftshader_indirect -no-snapshot-save -camera-back none -camera-front none
+          script: bash scripts/hunt.sh ${{ matrix.label }}
+
+      - name: Upload logs for ${{ matrix.label }}
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunt-${{ matrix.label }}
+          path: out/${{ matrix.label }}
+          if-no-files-found: warn
+
+  hunt-arm64:
+    runs-on: macos-14
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch latest Outify APK
+        run: |
+          curl -sSL --retry 3 -o outify.apk "$APK_URL"
+          ls -l outify.apk
+
+      - name: Hunt for crashes on android-14-arm64
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          target: google_apis
+          arch: arm64-v8a
+          profile: pixel_6
+          disable-animations: true
+          emulator-options: -no-window -no-audio -no-boot-anim -no-snapshot-save -camera-back none -camera-front none
+          script: bash scripts/hunt.sh android-14-arm64
+
+      - name: Upload logs for android-14-arm64
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunt-android-14-arm64
+          path: out/android-14-arm64
+          if-no-files-found: warn
+
+  publish:
+    needs: [hunt, hunt-arm64]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          path: out
+          merge-multiple: true
+
+      - name: Commit results
+        run: |
+          ls -R out || true
+          git config user.name "crash-hunt"
+          git config user.email "crash-hunt@users.noreply.github.com"
+          git add -A out
+          git commit -m "crash hunt results" || echo "nothing to commit"
+          git push || echo "push failed"
