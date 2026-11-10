@@ -1,0 +1,19 @@
+name: probe
+
+on:
+  push:
+    branches: [probe]
+
+jobs:
+  mac-latest:
+    runs-on: macos-latest
+    steps:
+      - run: uname -m; sw_vers
+  mac-15:
+    runs-on: macos-15
+    steps:
+      - run: uname -m; sw_vers
+  arm-linux:
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - run: uname -m; ls -l /dev/kvm || echo no-kvm
