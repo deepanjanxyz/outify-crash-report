@@ -10,7 +10,7 @@ env:
 jobs:
   arm:
     runs-on: macos-15
-    timeout-minutes: 60
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
 
@@ -44,7 +44,8 @@ jobs:
           arch: arm64-v8a
           profile: pixel_6
           disable-animations: true
-          emulator-options: -no-window -no-audio -no-boot-anim -no-snapshot-save -camera-back none -camera-front none
+          emulator-boot-timeout: 1800
+          emulator-options: -no-window -no-audio -no-boot-anim -gpu swiftshader_indirect -no-snapshot-save -camera-back none -camera-front none
           script: bash scripts/hunt.sh android-14-arm64
 
       - name: Upload logs
