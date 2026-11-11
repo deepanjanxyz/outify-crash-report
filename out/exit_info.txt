@@ -1,0 +1,68 @@
+ACTIVITY MANAGER PROCESS EXIT INFO (dumpsys activity exit-info)
+Last Timestamp of Persistence Into Persistent Storage: 1970-01-01 00:00:00.000
+  package: cc.tomko.outify
+    Historical Process Exit for uid=10174
+        ApplicationExitInfo #0:
+          timestamp=2026-11-11 16:28:03.497 pid=8587 realUid=10174 packageUid=10174 definingUid=10174 user=0
+          process=cc.tomko.outify reason=4 (APP CRASH(EXCEPTION)) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0.00 rss=0.00 description=crash state=empty trace=null
+        ApplicationExitInfo #1:
+          timestamp=2026-11-11 16:27:50.723 pid=8506 realUid=10174 packageUid=10174 definingUid=10174 user=0
+          process=cc.tomko.outify reason=4 (APP CRASH(EXCEPTION)) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0.00 rss=0.00 description=crash state=empty trace=null
+        ApplicationExitInfo #2:
+          timestamp=2026-11-11 16:27:38.194 pid=8416 realUid=10174 packageUid=10174 definingUid=10174 user=0
+          process=cc.tomko.outify reason=4 (APP CRASH(EXCEPTION)) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0.00 rss=0.00 description=crash state=empty trace=null
+        ApplicationExitInfo #3:
+          timestamp=2026-11-11 16:27:26.293 pid=8275 realUid=10174 packageUid=10174 definingUid=10174 user=0
+          process=cc.tomko.outify reason=4 (APP CRASH(EXCEPTION)) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0.00 rss=0.00 description=crash state=empty trace=null
+        ApplicationExitInfo #4:
+          timestamp=2026-11-11 16:27:11.901 pid=7997 realUid=10174 packageUid=10174 definingUid=10174 user=0
+          process=cc.tomko.outify reason=4 (APP CRASH(EXCEPTION)) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0.00 rss=0.00 description=crash state=empty trace=null
+        ApplicationExitInfo #5:
+          timestamp=2026-11-11 16:26:52.912 pid=7080 realUid=10174 packageUid=10174 definingUid=10174 user=0
+          process=cc.tomko.outify reason=4 (APP CRASH(EXCEPTION)) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0.00 rss=0.00 description=crash state=empty trace=null
+        ApplicationExitInfo #6:
+          timestamp=2026-11-11 16:26:50.797 pid=6992 realUid=10174 packageUid=10174 definingUid=10174 user=0
+          process=cc.tomko.outify reason=4 (APP CRASH(EXCEPTION)) subreason=0 (UNKNOWN) status=0
+          importance=200 pss=0.00 rss=0.00 description=crash state=empty trace=null
+        ApplicationExitInfo #7:
+          timestamp=2026-11-11 16:26:46.948 pid=6883 realUid=10174 packageUid=10174 definingUid=10174 user=0
+          process=cc.tomko.outify reason=4 (APP CRASH(EXCEPTION)) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0.00 rss=0.00 description=crash state=empty trace=null
+        ApplicationExitInfo #8:
+          timestamp=2026-11-11 16:26:43.987 pid=6810 realUid=10174 packageUid=10174 definingUid=10174 user=0
+          process=cc.tomko.outify reason=4 (APP CRASH(EXCEPTION)) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0.00 rss=0.00 description=crash state=empty trace=null
+        ApplicationExitInfo #9:
+          timestamp=2026-11-11 16:26:42.528 pid=6761 realUid=10174 packageUid=10174 definingUid=10174 user=0
+          process=cc.tomko.outify reason=4 (APP CRASH(EXCEPTION)) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0.00 rss=0.00 description=crash state=empty trace=null
+        ApplicationExitInfo #10:
+          timestamp=2026-11-11 16:26:40.247 pid=6728 realUid=10174 packageUid=10174 definingUid=10174 user=0
+          process=cc.tomko.outify reason=4 (APP CRASH(EXCEPTION)) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0.00 rss=0.00 description=crash state=empty trace=null
+        ApplicationExitInfo #11:
+          timestamp=2026-11-11 16:26:39.361 pid=6698 realUid=10174 packageUid=10174 definingUid=10174 user=0
+          process=cc.tomko.outify reason=4 (APP CRASH(EXCEPTION)) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0.00 rss=0.00 description=crash state=empty trace=null
+        ApplicationExitInfo #12:
+          timestamp=2026-11-11 16:26:37.166 pid=6657 realUid=10174 packageUid=10174 definingUid=10174 user=0
+          process=cc.tomko.outify reason=4 (APP CRASH(EXCEPTION)) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0.00 rss=0.00 description=crash state=empty trace=null
+        ApplicationExitInfo #13:
+          timestamp=2026-11-11 16:26:36.511 pid=6613 realUid=10174 packageUid=10174 definingUid=10174 user=0
+          process=cc.tomko.outify reason=4 (APP CRASH(EXCEPTION)) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0.00 rss=0.00 description=crash state=empty trace=null
+        ApplicationExitInfo #14:
+          timestamp=2026-11-11 16:26:33.796 pid=6573 realUid=10174 packageUid=10174 definingUid=10174 user=0
+          process=cc.tomko.outify reason=4 (APP CRASH(EXCEPTION)) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0.00 rss=0.00 description=crash state=empty trace=null
+        ApplicationExitInfo #15:
+          timestamp=2026-11-11 16:26:31.646 pid=6541 realUid=10174 packageUid=10174 definingUid=10174 user=0
+          process=cc.tomko.outify reason=4 (APP CRASH(EXCEPTION)) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0.00 rss=0.00 description=crash state=empty trace=null

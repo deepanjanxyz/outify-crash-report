@@ -1,0 +1,446 @@
+--------- beginning of crash
+11-11 16:24:16.357  3366  3403 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-8
+11-11 16:24:16.357  3366  3403 E AndroidRuntime: Process: cc.tomko.outify, PID: 3366
+11-11 16:24:16.357  3366  3403 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:24:16.357  3366  3403 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:24:16.357  3366  3403 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:24:16.357  3366  3403 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:24:16.357  3366  3403 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:24:16.357  3366  3403 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:24:16.357  3366  3403 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:24:16.357  3366  3403 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:24:16.357  3366  3403 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@dbac780, Dispatchers.IO]
+11-11 16:24:51.328  4314  4334 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-3
+11-11 16:24:51.328  4314  4334 E AndroidRuntime: Process: cc.tomko.outify, PID: 4314
+11-11 16:24:51.328  4314  4334 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:24:51.328  4314  4334 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:24:51.328  4314  4334 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:24:51.328  4314  4334 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:24:51.328  4314  4334 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:24:51.328  4314  4334 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:24:51.328  4314  4334 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:24:51.328  4314  4334 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:24:51.328  4314  4334 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@dbac780, Dispatchers.IO]
+11-11 16:25:02.685  4495  4519 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-4
+11-11 16:25:02.685  4495  4519 E AndroidRuntime: Process: cc.tomko.outify, PID: 4495
+11-11 16:25:02.685  4495  4519 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:25:02.685  4495  4519 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:25:02.685  4495  4519 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:25:02.685  4495  4519 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:25:02.685  4495  4519 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:25:02.685  4495  4519 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:25:02.685  4495  4519 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:25:02.685  4495  4519 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:25:02.685  4495  4519 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@7ae9fe, Dispatchers.IO]
+11-11 16:25:15.587  4774  4800 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-8
+11-11 16:25:15.587  4774  4800 E AndroidRuntime: Process: cc.tomko.outify, PID: 4774
+11-11 16:25:15.587  4774  4800 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:25:15.587  4774  4800 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:25:15.587  4774  4800 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:25:15.587  4774  4800 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:25:15.587  4774  4800 E AndroidRuntime: 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+11-11 16:25:15.587  4774  4800 E AndroidRuntime: 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+11-11 16:25:15.587  4774  4800 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+11-11 16:25:15.587  4774  4800 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:25:15.587  4774  4800 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:25:15.587  4774  4800 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:25:15.587  4774  4800 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:25:15.587  4774  4800 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@7ae9fe, Dispatchers.IO]
+11-11 16:25:27.090  5036  5055 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-3
+11-11 16:25:27.090  5036  5055 E AndroidRuntime: Process: cc.tomko.outify, PID: 5036
+11-11 16:25:27.090  5036  5055 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:25:27.090  5036  5055 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:25:27.090  5036  5055 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:25:27.090  5036  5055 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:25:27.090  5036  5055 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:25:27.090  5036  5055 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:25:27.090  5036  5055 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:25:27.090  5036  5055 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:25:27.090  5036  5055 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@2c82075, Dispatchers.IO]
+11-11 16:25:38.983  5254  5292 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-6
+11-11 16:25:38.983  5254  5292 E AndroidRuntime: Process: cc.tomko.outify, PID: 5254
+11-11 16:25:38.983  5254  5292 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:25:38.983  5254  5292 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:25:38.983  5254  5292 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:25:38.983  5254  5292 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:25:38.983  5254  5292 E AndroidRuntime: 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+11-11 16:25:38.983  5254  5292 E AndroidRuntime: 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+11-11 16:25:38.983  5254  5292 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+11-11 16:25:38.983  5254  5292 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:25:38.983  5254  5292 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:25:38.983  5254  5292 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:25:38.983  5254  5292 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:25:38.983  5254  5292 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@7ae9fe, Dispatchers.IO]
+11-11 16:25:49.444  5556  5575 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-3
+11-11 16:25:49.444  5556  5575 E AndroidRuntime: Process: cc.tomko.outify, PID: 5556
+11-11 16:25:49.444  5556  5575 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:25:49.444  5556  5575 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:25:49.444  5556  5575 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:25:49.444  5556  5575 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:25:49.444  5556  5575 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:25:49.444  5556  5575 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:25:49.444  5556  5575 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:25:49.444  5556  5575 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:25:49.444  5556  5575 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@aad2e62, Dispatchers.IO]
+11-11 16:25:50.356  5593  5620 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-7
+11-11 16:25:50.356  5593  5620 E AndroidRuntime: Process: cc.tomko.outify, PID: 5593
+11-11 16:25:50.356  5593  5620 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:25:50.356  5593  5620 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:25:50.356  5593  5620 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:25:50.356  5593  5620 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:25:50.356  5593  5620 E AndroidRuntime: 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+11-11 16:25:50.356  5593  5620 E AndroidRuntime: 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+11-11 16:25:50.356  5593  5620 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+11-11 16:25:50.356  5593  5620 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:25:50.356  5593  5620 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:25:50.356  5593  5620 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:25:50.356  5593  5620 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:25:50.356  5593  5620 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@833ceae, Dispatchers.IO]
+11-11 16:25:53.032  1025  2274 E AndroidRuntime: FATAL EXCEPTION: com.google.android.googlequicksearchbox
+11-11 16:25:53.032  1025  2274 E AndroidRuntime: Process: com.google.android.apps.nexuslauncher, PID: 1025
+11-11 16:25:53.032  1025  2274 E AndroidRuntime: java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.Class java.lang.Object.getClass()' on a null object reference
+11-11 16:25:53.032  1025  2274 E AndroidRuntime: 	at y1.u0.a(Unknown Source:3)
+11-11 16:25:53.032  1025  2274 E AndroidRuntime: 	at B0.I.run(Unknown Source:59)
+11-11 16:25:53.032  1025  2274 E AndroidRuntime: 	at android.os.Handler.handleCallback(Handler.java:942)
+11-11 16:25:53.032  1025  2274 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:99)
+11-11 16:25:53.032  1025  2274 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:201)
+11-11 16:25:53.032  1025  2274 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:288)
+11-11 16:25:53.032  1025  2274 E AndroidRuntime: 	at android.os.HandlerThread.run(HandlerThread.java:67)
+11-11 16:25:53.429  1651  5624 E AndroidRuntime: FATAL EXCEPTION: aiai-echo-search-1
+11-11 16:25:53.429  1651  5624 E AndroidRuntime: Process: com.google.android.as, PID: 1651
+11-11 16:25:53.429  1651  5624 E AndroidRuntime: java.lang.IllegalArgumentException: No enum constant fdw.WEB_SUGGEST
+11-11 16:25:53.429  1651  5624 E AndroidRuntime: 	at java.lang.Enum.valueOf(Enum.java:259)
+11-11 16:25:53.429  1651  5624 E AndroidRuntime: 	at fdw.a(Unknown Source:2)
+11-11 16:25:53.429  1651  5624 E AndroidRuntime: 	at fjm.b(PG:10)
+11-11 16:25:53.429  1651  5624 E AndroidRuntime: 	at ocw.e(PG:4)
+11-11 16:25:53.429  1651  5624 E AndroidRuntime: 	at oix.run(PG:8)
+11-11 16:25:53.429  1651  5624 E AndroidRuntime: 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:463)
+11-11 16:25:53.429  1651  5624 E AndroidRuntime: 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+11-11 16:25:53.429  1651  5624 E AndroidRuntime: 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:307)
+11-11 16:25:53.429  1651  5624 E AndroidRuntime: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+11-11 16:25:53.429  1651  5624 E AndroidRuntime: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
+11-11 16:25:53.429  1651  5624 E AndroidRuntime: 	at dum.run(PG:65)
+11-11 16:25:53.429  1651  5624 E AndroidRuntime: 	at java.lang.Thread.run(Thread.java:1012)
+11-11 16:25:57.710  5788  5810 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-6
+11-11 16:25:57.710  5788  5810 E AndroidRuntime: Process: cc.tomko.outify, PID: 5788
+11-11 16:25:57.710  5788  5810 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:25:57.710  5788  5810 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:25:57.710  5788  5810 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:25:57.710  5788  5810 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:25:57.710  5788  5810 E AndroidRuntime: 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+11-11 16:25:57.710  5788  5810 E AndroidRuntime: 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+11-11 16:25:57.710  5788  5810 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+11-11 16:25:57.710  5788  5810 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:25:57.710  5788  5810 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:25:57.710  5788  5810 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:25:57.710  5788  5810 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:25:57.710  5788  5810 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@f6cf099, Dispatchers.IO]
+11-11 16:26:00.957  5884  5902 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-2
+11-11 16:26:00.957  5884  5902 E AndroidRuntime: Process: cc.tomko.outify, PID: 5884
+11-11 16:26:00.957  5884  5902 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:26:00.957  5884  5902 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:26:00.957  5884  5902 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:26:00.957  5884  5902 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:26:00.957  5884  5902 E AndroidRuntime: 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+11-11 16:26:00.957  5884  5902 E AndroidRuntime: 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+11-11 16:26:00.957  5884  5902 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+11-11 16:26:00.957  5884  5902 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:26:00.957  5884  5902 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:26:00.957  5884  5902 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:26:00.957  5884  5902 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:26:00.957  5884  5902 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@a6310e5, Dispatchers.IO]
+11-11 16:26:03.856  5934  5958 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-7
+11-11 16:26:03.856  5934  5958 E AndroidRuntime: Process: cc.tomko.outify, PID: 5934
+11-11 16:26:03.856  5934  5958 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:26:03.856  5934  5958 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:26:03.856  5934  5958 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:26:03.856  5934  5958 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:26:03.856  5934  5958 E AndroidRuntime: 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+11-11 16:26:03.856  5934  5958 E AndroidRuntime: 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+11-11 16:26:03.856  5934  5958 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+11-11 16:26:03.856  5934  5958 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:26:03.856  5934  5958 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:26:03.856  5934  5958 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:26:03.856  5934  5958 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:26:03.856  5934  5958 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@2073f5e, Dispatchers.IO]
+11-11 16:26:04.878  5971  5992 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-5
+11-11 16:26:04.878  5971  5992 E AndroidRuntime: Process: cc.tomko.outify, PID: 5971
+11-11 16:26:04.878  5971  5992 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:26:04.878  5971  5992 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:26:04.878  5971  5992 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:26:04.878  5971  5992 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:26:04.878  5971  5992 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:26:04.878  5971  5992 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:26:04.878  5971  5992 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:26:04.878  5971  5992 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:26:04.878  5971  5992 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@aad2e62, Dispatchers.IO]
+11-11 16:26:09.118  6032  6050 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-1
+11-11 16:26:09.118  6032  6050 E AndroidRuntime: Process: cc.tomko.outify, PID: 6032
+11-11 16:26:09.118  6032  6050 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:26:09.118  6032  6050 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:26:09.118  6032  6050 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:26:09.118  6032  6050 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:26:09.118  6032  6050 E AndroidRuntime: 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+11-11 16:26:09.118  6032  6050 E AndroidRuntime: 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+11-11 16:26:09.118  6032  6050 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+11-11 16:26:09.118  6032  6050 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:26:09.118  6032  6050 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:26:09.118  6032  6050 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:26:09.118  6032  6050 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:26:09.118  6032  6050 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@17227ba, Dispatchers.IO]
+11-11 16:26:18.605  6197  6234 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-2
+11-11 16:26:18.605  6197  6234 E AndroidRuntime: Process: cc.tomko.outify, PID: 6197
+11-11 16:26:18.605  6197  6234 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:26:18.605  6197  6234 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:26:18.605  6197  6234 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:26:18.605  6197  6234 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:26:18.605  6197  6234 E AndroidRuntime: 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+11-11 16:26:18.605  6197  6234 E AndroidRuntime: 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+11-11 16:26:18.605  6197  6234 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+11-11 16:26:18.605  6197  6234 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:26:18.605  6197  6234 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:26:18.605  6197  6234 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:26:18.605  6197  6234 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:26:18.605  6197  6234 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@f7a0698, Dispatchers.IO]
+11-11 16:26:20.550  6341  6367 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-6
+11-11 16:26:20.550  6341  6367 E AndroidRuntime: Process: cc.tomko.outify, PID: 6341
+11-11 16:26:20.550  6341  6367 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:26:20.550  6341  6367 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:26:20.550  6341  6367 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:26:20.550  6341  6367 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:26:20.550  6341  6367 E AndroidRuntime: 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+11-11 16:26:20.550  6341  6367 E AndroidRuntime: 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+11-11 16:26:20.550  6341  6367 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+11-11 16:26:20.550  6341  6367 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:26:20.550  6341  6367 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:26:20.550  6341  6367 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:26:20.550  6341  6367 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:26:20.550  6341  6367 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@833ceae, Dispatchers.IO]
+11-11 16:26:24.071  6423  6447 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-6
+11-11 16:26:24.071  6423  6447 E AndroidRuntime: Process: cc.tomko.outify, PID: 6423
+11-11 16:26:24.071  6423  6447 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:26:24.071  6423  6447 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:26:24.071  6423  6447 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:26:24.071  6423  6447 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:26:24.071  6423  6447 E AndroidRuntime: 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+11-11 16:26:24.071  6423  6447 E AndroidRuntime: 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+11-11 16:26:24.071  6423  6447 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+11-11 16:26:24.071  6423  6447 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:26:24.071  6423  6447 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:26:24.071  6423  6447 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:26:24.071  6423  6447 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:26:24.071  6423  6447 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@b045e47, Dispatchers.IO]
+11-11 16:26:28.374  6469  6497 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-5
+11-11 16:26:28.374  6469  6497 E AndroidRuntime: Process: cc.tomko.outify, PID: 6469
+11-11 16:26:28.374  6469  6497 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:26:28.374  6469  6497 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:26:28.374  6469  6497 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:26:28.374  6469  6497 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:26:28.374  6469  6497 E AndroidRuntime: 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+11-11 16:26:28.374  6469  6497 E AndroidRuntime: 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+11-11 16:26:28.374  6469  6497 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+11-11 16:26:28.374  6469  6497 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:26:28.374  6469  6497 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:26:28.374  6469  6497 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:26:28.374  6469  6497 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:26:28.374  6469  6497 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@f7a0698, Dispatchers.IO]
+11-11 16:26:31.640  6541  6559 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-3
+11-11 16:26:31.640  6541  6559 E AndroidRuntime: Process: cc.tomko.outify, PID: 6541
+11-11 16:26:31.640  6541  6559 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:26:31.640  6541  6559 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:26:31.640  6541  6559 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:26:31.640  6541  6559 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:26:31.640  6541  6559 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:26:31.640  6541  6559 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:26:31.640  6541  6559 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:26:31.640  6541  6559 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:26:31.640  6541  6559 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@6874ef1, Dispatchers.IO]
+11-11 16:26:33.770  6573  6594 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-3
+11-11 16:26:33.770  6573  6594 E AndroidRuntime: Process: cc.tomko.outify, PID: 6573
+11-11 16:26:33.770  6573  6594 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:26:33.770  6573  6594 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:26:33.770  6573  6594 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:26:33.770  6573  6594 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:26:33.770  6573  6594 E AndroidRuntime: 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+11-11 16:26:33.770  6573  6594 E AndroidRuntime: 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+11-11 16:26:33.770  6573  6594 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+11-11 16:26:33.770  6573  6594 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:26:33.770  6573  6594 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:26:33.770  6573  6594 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:26:33.770  6573  6594 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:26:33.770  6573  6594 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@b045e47, Dispatchers.IO]
+11-11 16:26:36.446  6613  6634 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-3
+11-11 16:26:36.446  6613  6634 E AndroidRuntime: Process: cc.tomko.outify, PID: 6613
+11-11 16:26:36.446  6613  6634 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:26:36.446  6613  6634 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:26:36.446  6613  6634 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:26:36.446  6613  6634 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:26:36.446  6613  6634 E AndroidRuntime: 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+11-11 16:26:36.446  6613  6634 E AndroidRuntime: 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+11-11 16:26:36.446  6613  6634 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+11-11 16:26:36.446  6613  6634 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:26:36.446  6613  6634 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:26:36.446  6613  6634 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:26:36.446  6613  6634 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:26:36.446  6613  6634 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@992fd55, Dispatchers.IO]
+11-11 16:26:37.163  6657  6674 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-1
+11-11 16:26:37.163  6657  6674 E AndroidRuntime: Process: cc.tomko.outify, PID: 6657
+11-11 16:26:37.163  6657  6674 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:26:37.163  6657  6674 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:26:37.163  6657  6674 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:26:37.163  6657  6674 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:26:37.163  6657  6674 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:26:37.163  6657  6674 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:26:37.163  6657  6674 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:26:37.163  6657  6674 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:26:37.163  6657  6674 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@833ceae, Dispatchers.IO]
+11-11 16:26:39.359  6698  6719 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-5
+11-11 16:26:39.359  6698  6719 E AndroidRuntime: Process: cc.tomko.outify, PID: 6698
+11-11 16:26:39.359  6698  6719 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:26:39.359  6698  6719 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:26:39.359  6698  6719 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:26:39.359  6698  6719 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:26:39.359  6698  6719 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:26:39.359  6698  6719 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:26:39.359  6698  6719 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:26:39.359  6698  6719 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:26:39.359  6698  6719 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@f7a0698, Dispatchers.IO]
+11-11 16:26:40.238  6728  6749 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-4
+11-11 16:26:40.238  6728  6749 E AndroidRuntime: Process: cc.tomko.outify, PID: 6728
+11-11 16:26:40.238  6728  6749 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:26:40.238  6728  6749 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:26:40.238  6728  6749 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:26:40.238  6728  6749 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:26:40.238  6728  6749 E AndroidRuntime: 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+11-11 16:26:40.238  6728  6749 E AndroidRuntime: 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+11-11 16:26:40.238  6728  6749 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+11-11 16:26:40.238  6728  6749 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:26:40.238  6728  6749 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:26:40.238  6728  6749 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:26:40.238  6728  6749 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:26:40.238  6728  6749 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@17227ba, Dispatchers.IO]
+11-11 16:26:42.472  6761  6781 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-2
+11-11 16:26:42.472  6761  6781 E AndroidRuntime: Process: cc.tomko.outify, PID: 6761
+11-11 16:26:42.472  6761  6781 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:26:42.472  6761  6781 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:26:42.472  6761  6781 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:26:42.472  6761  6781 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:26:42.472  6761  6781 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:26:42.472  6761  6781 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:26:42.472  6761  6781 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:26:42.472  6761  6781 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:26:42.472  6761  6781 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@833ceae, Dispatchers.IO]
+11-11 16:26:43.868  6810  6843 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-1
+11-11 16:26:43.868  6810  6843 E AndroidRuntime: Process: cc.tomko.outify, PID: 6810
+11-11 16:26:43.868  6810  6843 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:26:43.868  6810  6843 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:26:43.868  6810  6843 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:26:43.868  6810  6843 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:26:43.868  6810  6843 E AndroidRuntime: 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+11-11 16:26:43.868  6810  6843 E AndroidRuntime: 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+11-11 16:26:43.868  6810  6843 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+11-11 16:26:43.868  6810  6843 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:26:43.868  6810  6843 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:26:43.868  6810  6843 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:26:43.868  6810  6843 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:26:43.868  6810  6843 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@b0a1bcf, Dispatchers.IO]
+11-11 16:26:46.758  6883  6912 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-3
+11-11 16:26:46.758  6883  6912 E AndroidRuntime: Process: cc.tomko.outify, PID: 6883
+11-11 16:26:46.758  6883  6912 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:26:46.758  6883  6912 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:26:46.758  6883  6912 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:26:46.758  6883  6912 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:26:46.758  6883  6912 E AndroidRuntime: 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+11-11 16:26:46.758  6883  6912 E AndroidRuntime: 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+11-11 16:26:46.758  6883  6912 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+11-11 16:26:46.758  6883  6912 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:26:46.758  6883  6912 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:26:46.758  6883  6912 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:26:46.758  6883  6912 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:26:46.758  6883  6912 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@18c87dc, Dispatchers.IO]
+11-11 16:26:50.790  6992  7023 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-3
+11-11 16:26:50.790  6992  7023 E AndroidRuntime: Process: cc.tomko.outify, PID: 6992
+11-11 16:26:50.790  6992  7023 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:26:50.790  6992  7023 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:26:50.790  6992  7023 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:26:50.790  6992  7023 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:26:50.790  6992  7023 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:26:50.790  6992  7023 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:26:50.790  6992  7023 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:26:50.790  6992  7023 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:26:50.790  6992  7023 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@d30e92d, Dispatchers.IO]
+11-11 16:26:52.877  7080  7107 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-3
+11-11 16:26:52.877  7080  7107 E AndroidRuntime: Process: cc.tomko.outify, PID: 7080
+11-11 16:26:52.877  7080  7107 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:26:52.877  7080  7107 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:26:52.877  7080  7107 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:26:52.877  7080  7107 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:26:52.877  7080  7107 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:26:52.877  7080  7107 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:26:52.877  7080  7107 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:26:52.877  7080  7107 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:26:52.877  7080  7107 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@aad2e62, Dispatchers.IO]
+11-11 16:27:11.853  7997  8022 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-5
+11-11 16:27:11.853  7997  8022 E AndroidRuntime: Process: cc.tomko.outify, PID: 7997
+11-11 16:27:11.853  7997  8022 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:27:11.853  7997  8022 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:27:11.853  7997  8022 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:27:11.853  7997  8022 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:27:11.853  7997  8022 E AndroidRuntime: 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+11-11 16:27:11.853  7997  8022 E AndroidRuntime: 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+11-11 16:27:11.853  7997  8022 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+11-11 16:27:11.853  7997  8022 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:27:11.853  7997  8022 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:27:11.853  7997  8022 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:27:11.853  7997  8022 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:27:11.853  7997  8022 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@17227ba, Dispatchers.IO]
+11-11 16:27:26.289  8275  8312 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-7
+11-11 16:27:26.289  8275  8312 E AndroidRuntime: Process: cc.tomko.outify, PID: 8275
+11-11 16:27:26.289  8275  8312 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:27:26.289  8275  8312 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:27:26.289  8275  8312 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:27:26.289  8275  8312 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:27:26.289  8275  8312 E AndroidRuntime: 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+11-11 16:27:26.289  8275  8312 E AndroidRuntime: 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+11-11 16:27:26.289  8275  8312 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+11-11 16:27:26.289  8275  8312 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:27:26.289  8275  8312 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:27:26.289  8275  8312 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:27:26.289  8275  8312 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:27:26.289  8275  8312 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@901a71, Dispatchers.IO]
+11-11 16:27:38.114  8416  8435 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-1
+11-11 16:27:38.114  8416  8435 E AndroidRuntime: Process: cc.tomko.outify, PID: 8416
+11-11 16:27:38.114  8416  8435 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:27:38.114  8416  8435 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:27:38.114  8416  8435 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:27:38.114  8416  8435 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:27:38.114  8416  8435 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:27:38.114  8416  8435 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:27:38.114  8416  8435 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:27:38.114  8416  8435 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:27:38.114  8416  8435 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@7b8d661, Dispatchers.IO]
+11-11 16:27:50.694  8506  8523 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-1
+11-11 16:27:50.694  8506  8523 E AndroidRuntime: Process: cc.tomko.outify, PID: 8506
+11-11 16:27:50.694  8506  8523 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:27:50.694  8506  8523 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:27:50.694  8506  8523 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:27:50.694  8506  8523 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:27:50.694  8506  8523 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:27:50.694  8506  8523 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:27:50.694  8506  8523 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:27:50.694  8506  8523 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:27:50.694  8506  8523 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@e54f444, Dispatchers.IO]
+11-11 16:28:03.494  8587  8611 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-7
+11-11 16:28:03.494  8587  8611 E AndroidRuntime: Process: cc.tomko.outify, PID: 8587
+11-11 16:28:03.494  8587  8611 E AndroidRuntime: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+11-11 16:28:03.494  8587  8611 E AndroidRuntime: 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+11-11 16:28:03.494  8587  8611 E AndroidRuntime: 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+11-11 16:28:03.494  8587  8611 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+11-11 16:28:03.494  8587  8611 E AndroidRuntime: 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+11-11 16:28:03.494  8587  8611 E AndroidRuntime: 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+11-11 16:28:03.494  8587  8611 E AndroidRuntime: 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+11-11 16:28:03.494  8587  8611 E AndroidRuntime: 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+11-11 16:28:03.494  8587  8611 E AndroidRuntime: 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+11-11 16:28:03.494  8587  8611 E AndroidRuntime: 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+11-11 16:28:03.494  8587  8611 E AndroidRuntime: 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+11-11 16:28:03.494  8587  8611 E AndroidRuntime: 	Suppressed: z32: [kn8{Cancelling}@58100ea, Dispatchers.IO]

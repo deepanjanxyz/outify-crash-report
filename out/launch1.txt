@@ -1,0 +1,6 @@
+Starting: Intent { cmp=cc.tomko.outify/.MainActivity }
+Status: ok
+LaunchState: UNKNOWN (0)
+Activity: cc.tomko.outify/.MainActivity
+WaitTime: 1757
+Complete

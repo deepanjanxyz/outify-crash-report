@@ -1,0 +1,49 @@
+[16:23:57] device: label: android-13 13 33 x86_64 Physical size: 1080x2400 Physical density: 420 
+[16:23:57] install apk
+[16:24:15] launch #1 (fresh)
+[16:24:33] snapshot 01_first_launch
+[16:24:33] alive after first launch: NO
+[16:24:33] attempting login with bogus credentials
+EDITS []
+BTNS []
+[16:24:50] snapshot 02_after_login_attempt
+[16:24:50] alive after failed login: NO
+[16:24:50] relaunch #1
+[16:25:01] snapshot 03_relaunch_1
+[16:25:01] relaunch #1: PROCESS DEAD
+[16:25:02] relaunch #2
+[16:25:14] snapshot 03_relaunch_2
+[16:25:14] relaunch #2: PROCESS DEAD
+[16:25:15] relaunch #3
+[16:25:26] snapshot 03_relaunch_3
+[16:25:26] relaunch #3: PROCESS DEAD
+[16:25:26] relaunch #4
+[16:25:38] snapshot 03_relaunch_4
+[16:25:38] relaunch #4: PROCESS DEAD
+[16:25:38] relaunch #5
+[16:25:48] snapshot 03_relaunch_5
+[16:25:48] relaunch #5: PROCESS DEAD
+[16:25:49] monkey crawl (500 events)
+[16:27:04] snapshot 04_after_monkey
+[16:27:04] bottom navigation sweep
+[16:27:04] tab sweep tap 108 2280
+[16:27:11] snapshot 05_tab_10
+[16:27:11] died at tab 10
+[16:27:17] tab sweep tap 324 2280
+[16:27:25] snapshot 05_tab_30
+[16:27:25] died at tab 30
+[16:27:31] tab sweep tap 540 2280
+[16:27:38] snapshot 05_tab_50
+[16:27:38] died at tab 50
+[16:27:44] tab sweep tap 756 2280
+[16:27:50] snapshot 05_tab_70
+[16:27:50] died at tab 70
+[16:27:56] tab sweep tap 972 2280
+[16:28:03] snapshot 05_tab_90
+[16:28:03] died at tab 90
+[16:28:09] deep tap 85 8
+[16:28:12] deep tap 50 8
+[16:28:15] deep tap 50 50
+[16:28:18] deep tap 50 92
+[16:28:23] snapshot 06_final
+[16:28:26] done

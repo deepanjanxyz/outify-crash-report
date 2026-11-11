@@ -1,0 +1,6 @@
+label: android-13
+13
+33
+x86_64
+Physical size: 1080x2400
+Physical density: 420

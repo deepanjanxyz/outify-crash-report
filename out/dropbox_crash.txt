@@ -1,0 +1,156 @@
+Drop box contents: 66 entries
+Max entries: 1000
+Low priority rate limit period: 2000 ms
+Low priority tags: {data_app_wtf, keymaster, system_server_wtf, system_app_strictmode, system_app_wtf, system_server_strictmode, data_app_strictmode, netstats}
+Searching for: data_app_crash
+
+========================================
+2026-11-11 16:24:16 data_app_crash (text, 1300 bytes)
+Process: cc.tomko.outify
+PID: 3366
+UID: 10174
+Frozen: false
+Flags: 0x20e8be44
+Package: cc.tomko.outify v20000 (2.0.0)
+Foreground: Yes
+Process-Runtime: 868
+Build: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+Loading-Progress: 1.0
+Dropped-Count: 0
+
+java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+	Suppressed: z32: [kn8{Cancelling}@dbac780, Dispatchers.IO]
+
+========================================
+2026-11-11 16:24:51 data_app_crash (text, 1301 bytes)
+Process: cc.tomko.outify
+PID: 4314
+UID: 10174
+Frozen: false
+Flags: 0x20c8be44
+Package: cc.tomko.outify v20000 (2.0.0)
+Foreground: Yes
+Process-Runtime: 1202
+Build: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+Loading-Progress: 1.0
+Dropped-Count: 0
+
+java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+	Suppressed: z32: [kn8{Cancelling}@dbac780, Dispatchers.IO]
+
+========================================
+2026-11-11 16:25:02 data_app_crash (text, 1300 bytes)
+Process: cc.tomko.outify
+PID: 4495
+UID: 10174
+Frozen: false
+Flags: 0x20c8be44
+Package: cc.tomko.outify v20000 (2.0.0)
+Foreground: Yes
+Process-Runtime: 1218
+Build: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+Loading-Progress: 1.0
+Dropped-Count: 0
+
+java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+	Suppressed: z32: [kn8{Cancelling}@7ae9fe, Dispatchers.IO]
+
+========================================
+2026-11-11 16:25:15 data_app_crash (text, 1566 bytes)
+Process: cc.tomko.outify
+PID: 4774
+UID: 10174
+Frozen: false
+Flags: 0x20c8be44
+Package: cc.tomko.outify v20000 (2.0.0)
+Foreground: Yes
+Process-Runtime: 1015
+Build: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+Loading-Progress: 1.0
+Dropped-Count: 0
+
+java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+	Suppressed: z32: [kn8{Cancelling}@7ae9fe, Dispatchers.IO]
+
+========================================
+2026-11-11 16:25:27 data_app_crash (text, 1301 bytes)
+Process: cc.tomko.outify
+PID: 5036
+UID: 10174
+Frozen: false
+Flags: 0x20c8be44
+Package: cc.tomko.outify v20000 (2.0.0)
+Foreground: Yes
+Process-Runtime: 1034
+Build: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+Loading-Progress: 1.0
+Dropped-Count: 0
+
+java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+	Suppressed: z32: [kn8{Cancelling}@2c82075, Dispatchers.IO]
+
+========================================
+2026-11-11 16:25:39 data_app_crash (text, 1566 bytes)
+Process: cc.tomko.outify
+PID: 5254
+UID: 10174
+Frozen: false
+Flags: 0x20c8be44
+Package: cc.tomko.outify v20000 (2.0.0)
+Foreground: Yes
+Process-Runtime: 1028
+Build: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+Loading-Progress: 1.0
+Dropped-Count: 0
+
+java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+	Suppressed: z32: [kn8{Cancelling}@7ae9fe, Dispatchers.IO]
+

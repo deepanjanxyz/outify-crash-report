@@ -1,0 +1,850 @@
+  bash arg: -p
+  bash arg: cc.tomko.outify
+  bash arg: --throttle
+  bash arg: 250
+  bash arg: --pct-syskeys
+  bash arg: 0
+  bash arg: --pct-appswitch
+  bash arg: 10
+  bash arg: --pct-touch
+  bash arg: 55
+  bash arg: --pct-motion
+  bash arg: 20
+  bash arg: --pct-nav
+  bash arg: 10
+  bash arg: --pct-majornav
+  bash arg: 5
+  bash arg: --ignore-crashes
+  bash arg: --ignore-timeouts
+  bash arg: -v
+  bash arg: 500
+args: [-p, cc.tomko.outify, --throttle, 250, --pct-syskeys, 0, --pct-appswitch, 10, --pct-touch, 55, --pct-motion, 20, --pct-nav, 10, --pct-majornav, 5, --ignore-crashes, --ignore-timeouts, -v, 500]
+ arg: "-p"
+ arg: "cc.tomko.outify"
+ arg: "--throttle"
+ arg: "250"
+ arg: "--pct-syskeys"
+ arg: "0"
+ arg: "--pct-appswitch"
+ arg: "10"
+ arg: "--pct-touch"
+ arg: "55"
+ arg: "--pct-motion"
+ arg: "20"
+ arg: "--pct-nav"
+ arg: "10"
+ arg: "--pct-majornav"
+ arg: "5"
+ arg: "--ignore-crashes"
+ arg: "--ignore-timeouts"
+ arg: "-v"
+ arg: "500"
+data="cc.tomko.outify"
+arg="--throttle" mCurArgData="null" mNextArg=3 argwas="--throttle" nextarg="250"
+data="250"
+arg="--pct-syskeys" mCurArgData="null" mNextArg=5 argwas="--pct-syskeys" nextarg="0"
+data="0"
+arg="--pct-appswitch" mCurArgData="null" mNextArg=7 argwas="--pct-appswitch" nextarg="10"
+data="10"
+arg="--pct-touch" mCurArgData="null" mNextArg=9 argwas="--pct-touch" nextarg="55"
+data="55"
+arg="--pct-motion" mCurArgData="null" mNextArg=11 argwas="--pct-motion" nextarg="20"
+data="20"
+arg="--pct-nav" mCurArgData="null" mNextArg=13 argwas="--pct-nav" nextarg="10"
+data="10"
+arg="--pct-majornav" mCurArgData="null" mNextArg=15 argwas="--pct-majornav" nextarg="5"
+data="5"
+arg="--ignore-crashes" mCurArgData="null" mNextArg=17 argwas="--ignore-crashes" nextarg="--ignore-timeouts"
+arg="--ignore-timeouts" mCurArgData="null" mNextArg=18 argwas="--ignore-timeouts" nextarg="-v"
+:Monkey: seed=1794445301528 count=500
+:AllowPackage: cc.tomko.outify
+:IncludeCategory: android.intent.category.LAUNCHER
+:IncludeCategory: android.intent.category.MONKEY
+// Event percentages:
+//   0: 55.0%
+//   1: 20.0%
+//   2: 0.0%
+//   3: 0.0%
+//   4: -0.0%
+//   5: -0.0%
+//   6: 10.0%
+//   7: 5.0%
+//   8: -0.0%
+//   9: 10.0%
+//   10: 0.0%
+//   11: 0.0%
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+:Sending Touch (ACTION_DOWN): 0:(838.0,429.0)
+:Sending Touch (ACTION_UP): 0:(831.0072,432.12112)
+:Sending Touch (ACTION_DOWN): 0:(747.0,55.0)
+:Sending Touch (ACTION_UP): 0:(754.18665,56.07582)
+// CRASH: cc.tomko.outify (pid 5556)
+// Short Msg: java.lang.UnsatisfiedLinkError
+// Long Msg: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// Build Label: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+// Build Changelist: 12342917
+// Build Time: 1725920748000
+// java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+// 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+// 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+// 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+// 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+// 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+// 	Suppressed: z32: [kn8{Cancelling}@aad2e62, Dispatchers.IO]
+// 
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+:Sending Touch (ACTION_DOWN): 0:(156.0,2193.0)
+:Sending Touch (ACTION_UP): 0:(174.89296,2188.2727)
+// CRASH: cc.tomko.outify (pid 5593)
+// Short Msg: java.lang.UnsatisfiedLinkError
+// Long Msg: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// Build Label: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+// Build Changelist: 12342917
+// Build Time: 1725920748000
+// java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+// 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+// 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+// 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+// 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+// 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+// 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+// 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+// 	Suppressed: z32: [kn8{Cancelling}@833ceae, Dispatchers.IO]
+// 
+:Sending Touch (ACTION_DOWN): 0:(1031.0,1449.0)
+:Sending Touch (ACTION_UP): 0:(1033.6385,1447.3806)
+:Sending Touch (ACTION_DOWN): 0:(273.0,539.0)
+:Sending Touch (ACTION_UP): 0:(277.0515,527.61334)
+:Sending Touch (ACTION_DOWN): 0:(421.0,2177.0)
+:Sending Touch (ACTION_UP): 0:(420.7503,2176.4673)
+:Sending Touch (ACTION_DOWN): 0:(510.0,622.0)
+:Sending Touch (ACTION_UP): 0:(503.51416,607.8566)
+:Sending Touch (ACTION_DOWN): 0:(595.0,1828.0)
+:Sending Touch (ACTION_UP): 0:(592.17535,1819.7375)
+// CRASH: com.google.android.apps.nexuslauncher (pid 1025)
+// Short Msg: java.lang.NullPointerException
+// Long Msg: java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.Class java.lang.Object.getClass()' on a null object reference
+// Build Label: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+// Build Changelist: 12342917
+// Build Time: 1725920748000
+// java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.Class java.lang.Object.getClass()' on a null object reference
+// 	at y1.u0.a(Unknown Source:3)
+// 	at B0.I.run(Unknown Source:59)
+// 	at android.os.Handler.handleCallback(Handler.java:942)
+// 	at android.os.Handler.dispatchMessage(Handler.java:99)
+// 	at android.os.Looper.loopOnce(Looper.java:201)
+// 	at android.os.Looper.loop(Looper.java:288)
+// 	at android.os.HandlerThread.run(HandlerThread.java:67)
+// 
+// CRASH: com.google.android.as (pid 1651)
+// Short Msg: java.lang.IllegalArgumentException
+// Long Msg: java.lang.IllegalArgumentException: No enum constant fdw.WEB_SUGGEST
+// Build Label: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+// Build Changelist: 12342917
+// Build Time: 1725920748000
+// java.lang.IllegalArgumentException: No enum constant fdw.WEB_SUGGEST
+// 	at java.lang.Enum.valueOf(Enum.java:259)
+// 	at fdw.a(Unknown Source:2)
+// 	at fjm.b(PG:10)
+// 	at ocw.e(PG:4)
+// 	at oix.run(PG:8)
+// 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:463)
+// 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+// 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:307)
+// 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+// 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
+// 	at dum.run(PG:65)
+// 	at java.lang.Thread.run(Thread.java:1012)
+// 
+:Sending Touch (ACTION_DOWN): 0:(667.0,1501.0)
+:Sending Touch (ACTION_UP): 0:(662.50964,1505.0485)
+    // Rejecting start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.google.android.apps.photos/.home.HomeActivity } in package com.google.android.apps.photos
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+:Sending Touch (ACTION_DOWN): 0:(147.0,2101.0)
+:Sending Touch (ACTION_UP): 0:(134.8112,2102.022)
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+// CRASH: cc.tomko.outify (pid 5788)
+// Short Msg: java.lang.UnsatisfiedLinkError
+// Long Msg: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// Build Label: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+// Build Changelist: 12342917
+// Build Time: 1725920748000
+// java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+// 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+// 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+// 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+// 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+// 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+// 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+// 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+// 	Suppressed: z32: [kn8{Cancelling}@f6cf099, Dispatchers.IO]
+// 
+:Sending Touch (ACTION_DOWN): 0:(142.0,305.0)
+:Sending Touch (ACTION_UP): 0:(141.27342,294.0377)
+:Sending Touch (ACTION_DOWN): 0:(804.0,1019.0)
+:Sending Touch (ACTION_UP): 0:(805.31573,1021.6399)
+:Sending Touch (ACTION_DOWN): 0:(755.0,910.0)
+:Sending Touch (ACTION_UP): 0:(747.13074,898.2438)
+:Sending Touch (ACTION_DOWN): 0:(858.0,2071.0)
+:Sending Touch (ACTION_UP): 0:(859.1263,2066.6934)
+:Sending Touch (ACTION_DOWN): 0:(432.0,2079.0)
+:Sending Touch (ACTION_UP): 0:(431.0599,2076.231)
+:Sending Touch (ACTION_DOWN): 0:(756.0,175.0)
+:Sending Touch (ACTION_UP): 0:(775.13074,176.90114)
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+// CRASH: cc.tomko.outify (pid 5884)
+// Short Msg: java.lang.UnsatisfiedLinkError
+// Long Msg: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// Build Label: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+// Build Changelist: 12342917
+// Build Time: 1725920748000
+// java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+// 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+// 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+// 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+// 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+// 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+// 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+// 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+// 	Suppressed: z32: [kn8{Cancelling}@a6310e5, Dispatchers.IO]
+// 
+:Sending Touch (ACTION_DOWN): 0:(393.0,1874.0)
+:Sending Touch (ACTION_UP): 0:(397.28677,1877.6415)
+:Sending Touch (ACTION_DOWN): 0:(887.0,630.0)
+:Sending Touch (ACTION_UP): 0:(935.9489,649.9818)
+:Sending Touch (ACTION_DOWN): 0:(30.0,621.0)
+:Sending Touch (ACTION_UP): 0:(21.738413,615.6331)
+:Sending Touch (ACTION_DOWN): 0:(21.0,910.0)
+:Sending Touch (ACTION_UP): 0:(24.833467,910.12573)
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+:Sending Touch (ACTION_DOWN): 0:(307.0,82.0)
+:Sending Touch (ACTION_UP): 0:(308.22897,84.2535)
+:Sending Touch (ACTION_DOWN): 0:(588.0,1584.0)
+:Sending Touch (ACTION_UP): 0:(577.92096,1580.8635)
+:Sending Touch (ACTION_DOWN): 0:(259.0,1084.0)
+:Sending Touch (ACTION_UP): 0:(250.0498,1079.484)
+// CRASH: cc.tomko.outify (pid 5934)
+// Short Msg: java.lang.UnsatisfiedLinkError
+// Long Msg: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// Build Label: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+// Build Changelist: 12342917
+// Build Time: 1725920748000
+// java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+// 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+// 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+// 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+// 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+// 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+// 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+// 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+// 	Suppressed: z32: [kn8{Cancelling}@2073f5e, Dispatchers.IO]
+// 
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+// CRASH: cc.tomko.outify (pid 5971)
+// Short Msg: java.lang.UnsatisfiedLinkError
+// Long Msg: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// Build Label: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+// Build Changelist: 12342917
+// Build Time: 1725920748000
+// java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+// 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+// 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+// 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+// 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+// 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+// 	Suppressed: z32: [kn8{Cancelling}@aad2e62, Dispatchers.IO]
+// 
+:Sending Touch (ACTION_DOWN): 0:(126.0,491.0)
+:Sending Touch (ACTION_UP): 0:(109.506386,490.54022)
+:Sending Touch (ACTION_DOWN): 0:(90.0,127.0)
+:Sending Touch (ACTION_UP): 0:(67.79948,109.0002)
+:Sending Touch (ACTION_DOWN): 0:(462.0,1540.0)
+:Sending Touch (ACTION_UP): 0:(460.488,1533.6892)
+    // Rejecting start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.google.android.gm/.ConversationListActivityGmail } in package com.google.android.gm
+:Sending Touch (ACTION_DOWN): 0:(301.0,247.0)
+:Sending Touch (ACTION_UP): 0:(323.24588,333.61227)
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+:Sending Touch (ACTION_DOWN): 0:(154.0,751.0)
+:Sending Touch (ACTION_UP): 0:(158.82697,747.5889)
+// CRASH: cc.tomko.outify (pid 6032)
+// Short Msg: java.lang.UnsatisfiedLinkError
+// Long Msg: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// Build Label: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+// Build Changelist: 12342917
+// Build Time: 1725920748000
+// java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+// 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+// 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+// 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+// 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+// 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+// 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+// 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+// 	Suppressed: z32: [kn8{Cancelling}@17227ba, Dispatchers.IO]
+// 
+:Sending Touch (ACTION_DOWN): 0:(784.0,2101.0)
+    //[calendar_time:2026-11-11 16:26:09.348  system_uptime:186951]
+    // Sending event #100
+:Sending Touch (ACTION_UP): 0:(728.46155,2088.792)
+:Sending Touch (ACTION_DOWN): 0:(632.0,815.0)
+:Sending Touch (ACTION_UP): 0:(635.0915,814.0718)
+:Sending Touch (ACTION_DOWN): 0:(140.0,1253.0)
+:Sending Touch (ACTION_UP): 0:(131.76323,1249.8372)
+:Sending Touch (ACTION_DOWN): 0:(83.0,665.0)
+:Sending Touch (ACTION_UP): 0:(146.20056,694.8253)
+:Sending Touch (ACTION_DOWN): 0:(263.0,1888.0)
+:Sending Touch (ACTION_UP): 0:(267.82147,1886.7152)
+:Sending Touch (ACTION_DOWN): 0:(747.0,1180.0)
+:Sending Touch (ACTION_UP): 0:(747.6347,1166.5588)
+:Sending Touch (ACTION_DOWN): 0:(605.0,1887.0)
+:Sending Touch (ACTION_UP): 0:(721.4259,1954.0623)
+:Sending Touch (ACTION_DOWN): 0:(751.0,1013.0)
+:Sending Touch (ACTION_UP): 0:(751.08636,1014.99365)
+:Sending Touch (ACTION_DOWN): 0:(518.0,1488.0)
+:Sending Touch (ACTION_UP): 0:(531.0893,1488.527)
+:Sending Touch (ACTION_DOWN): 0:(971.0,698.0)
+:Sending Touch (ACTION_UP): 0:(978.87573,698.5884)
+:Sending Touch (ACTION_DOWN): 0:(585.0,461.0)
+:Sending Touch (ACTION_UP): 0:(593.82745,454.21234)
+:Sending Touch (ACTION_DOWN): 0:(956.0,1997.0)
+:Sending Touch (ACTION_UP): 0:(925.78296,2048.3225)
+:Sending Touch (ACTION_DOWN): 0:(722.0,2008.0)
+:Sending Touch (ACTION_UP): 0:(725.3729,2008.7938)
+:Sending Touch (ACTION_DOWN): 0:(464.0,244.0)
+:Sending Touch (ACTION_UP): 0:(464.93127,242.84006)
+:Sending Touch (ACTION_DOWN): 0:(732.0,199.0)
+:Sending Touch (ACTION_UP): 0:(722.41675,205.52228)
+:Sending Touch (ACTION_DOWN): 0:(221.0,2157.0)
+:Sending Touch (ACTION_UP): 0:(232.7162,2160.2656)
+:Sending Touch (ACTION_DOWN): 0:(649.0,1361.0)
+:Sending Touch (ACTION_UP): 0:(698.30475,1344.3824)
+:Sending Touch (ACTION_DOWN): 0:(601.0,497.0)
+:Sending Touch (ACTION_UP): 0:(601.95605,495.20602)
+:Sending Touch (ACTION_DOWN): 0:(261.0,368.0)
+:Sending Touch (ACTION_UP): 0:(277.67508,392.6037)
+:Sending Touch (ACTION_DOWN): 0:(126.0,1991.0)
+:Sending Touch (ACTION_UP): 0:(126.09838,2003.6324)
+:Sending Touch (ACTION_DOWN): 0:(169.0,287.0)
+:Sending Touch (ACTION_UP): 0:(166.51372,274.26248)
+:Sending Touch (ACTION_DOWN): 0:(328.0,697.0)
+:Sending Touch (ACTION_UP): 0:(312.17755,685.3602)
+:Sending Touch (ACTION_DOWN): 0:(389.0,1694.0)
+:Sending Touch (ACTION_UP): 0:(390.03983,1712.0314)
+:Sending Touch (ACTION_DOWN): 0:(739.0,1041.0)
+:Sending Touch (ACTION_UP): 0:(739.1992,1044.5536)
+:Sending Touch (ACTION_DOWN): 0:(925.0,1009.0)
+:Sending Touch (ACTION_UP): 0:(945.20026,981.21466)
+:Sending Touch (ACTION_DOWN): 0:(530.0,1137.0)
+    // Injection Failed
+:Sending Touch (ACTION_UP): 0:(527.80975,1132.4418)
+    // Injection Failed
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+// CRASH: cc.tomko.outify (pid 6197)
+// Short Msg: java.lang.UnsatisfiedLinkError
+// Long Msg: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// Build Label: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+// Build Changelist: 12342917
+// Build Time: 1725920748000
+// java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+// 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+// 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+// 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+// 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+// 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+// 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+// 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+// 	Suppressed: z32: [kn8{Cancelling}@f7a0698, Dispatchers.IO]
+// 
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+// CRASH: cc.tomko.outify (pid 6341)
+// Short Msg: java.lang.UnsatisfiedLinkError
+// Long Msg: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// Build Label: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+// Build Changelist: 12342917
+// Build Time: 1725920748000
+// java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+// 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+// 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+// 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+// 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+// 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+// 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+// 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+// 	Suppressed: z32: [kn8{Cancelling}@833ceae, Dispatchers.IO]
+// 
+    //[calendar_time:2026-11-11 16:26:21.078  system_uptime:198547]
+    // Sending event #200
+:Sending Touch (ACTION_DOWN): 0:(1019.0,1043.0)
+:Sending Touch (ACTION_UP): 0:(982.37915,1022.9386)
+:Sending Touch (ACTION_DOWN): 0:(198.0,647.0)
+:Sending Touch (ACTION_UP): 0:(201.84886,613.4722)
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+// CRASH: cc.tomko.outify (pid 6423)
+// Short Msg: java.lang.UnsatisfiedLinkError
+// Long Msg: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// Build Label: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+// Build Changelist: 12342917
+// Build Time: 1725920748000
+// java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+// 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+// 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+// 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+// 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+// 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+// 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+// 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+// 	Suppressed: z32: [kn8{Cancelling}@b045e47, Dispatchers.IO]
+// 
+:Sending Touch (ACTION_DOWN): 0:(722.0,163.0)
+:Sending Touch (ACTION_UP): 0:(722.18805,175.87936)
+:Sending Touch (ACTION_DOWN): 0:(149.0,1603.0)
+:Sending Touch (ACTION_UP): 0:(149.30495,1606.8256)
+    // Rejecting start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.google.android.googlequicksearchbox/.SearchActivity } in package com.google.android.googlequicksearchbox
+:Sending Touch (ACTION_DOWN): 0:(383.0,759.0)
+:Sending Touch (ACTION_UP): 0:(381.76636,769.63434)
+:Sending Touch (ACTION_DOWN): 0:(424.0,1220.0)
+:Sending Touch (ACTION_UP): 0:(406.86688,1204.204)
+    // Rejecting start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.google.android.apps.docs/.app.NewMainProxyActivity } in package com.google.android.apps.docs
+:Sending Touch (ACTION_DOWN): 0:(716.0,388.0)
+:Sending Touch (ACTION_UP): 0:(717.2989,380.59085)
+:Sending Touch (ACTION_DOWN): 0:(168.0,868.0)
+:Sending Touch (ACTION_UP): 0:(184.0016,881.70996)
+    // Rejecting start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.google.android.calendar/com.android.calendar.AllInOneActivity } in package com.google.android.calendar
+:Sending Touch (ACTION_DOWN): 0:(428.0,62.0)
+:Sending Touch (ACTION_UP): 0:(429.3496,57.194454)
+:Sending Touch (ACTION_DOWN): 0:(1060.0,1573.0)
+:Sending Touch (ACTION_UP): 0:(1080.0,1577.7593)
+:Sending Touch (ACTION_DOWN): 0:(827.0,608.0)
+:Sending Touch (ACTION_UP): 0:(816.74835,623.5573)
+    // Rejecting start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.google.android.deskclock/com.android.deskclock.DeskClock } in package com.google.android.deskclock
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+:Sending Touch (ACTION_DOWN): 0:(251.0,1643.0)
+:Sending Touch (ACTION_UP): 0:(239.18478,1663.6647)
+:Sending Touch (ACTION_DOWN): 0:(1045.0,1108.0)
+:Sending Touch (ACTION_UP): 0:(1030.7649,1122.1918)
+// CRASH: cc.tomko.outify (pid 6469)
+// Short Msg: java.lang.UnsatisfiedLinkError
+// Long Msg: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// Build Label: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+// Build Changelist: 12342917
+// Build Time: 1725920748000
+// java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+// 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+// 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+// 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+// 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+// 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+// 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+// 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+// 	Suppressed: z32: [kn8{Cancelling}@f7a0698, Dispatchers.IO]
+// 
+:Sending Touch (ACTION_DOWN): 0:(413.0,667.0)
+:Sending Touch (ACTION_UP): 0:(382.127,689.0036)
+:Sending Touch (ACTION_DOWN): 0:(791.0,550.0)
+:Sending Touch (ACTION_UP): 0:(776.4129,548.927)
+:Sending Touch (ACTION_DOWN): 0:(167.0,316.0)
+:Sending Touch (ACTION_UP): 0:(178.82455,326.54364)
+    // Rejecting start of Intent { act=android.intent.action.VIEW dat=content://com.android.calendar/... cmp=com.google.android.calendar/com.android.calendar.AllInOneActivity } in package com.google.android.calendar
+:Sending Touch (ACTION_DOWN): 0:(792.0,1378.0)
+:Sending Touch (ACTION_UP): 0:(833.2893,1356.5662)
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+:Sending Touch (ACTION_DOWN): 0:(536.0,768.0)
+:Sending Touch (ACTION_UP): 0:(530.9391,758.17847)
+// CRASH: cc.tomko.outify (pid 6541)
+// Short Msg: java.lang.UnsatisfiedLinkError
+// Long Msg: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// Build Label: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+// Build Changelist: 12342917
+// Build Time: 1725920748000
+// java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+// 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+// 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+// 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+// 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+// 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+// 	Suppressed: z32: [kn8{Cancelling}@6874ef1, Dispatchers.IO]
+// 
+:Sending Touch (ACTION_DOWN): 0:(1068.0,1407.0)
+:Sending Touch (ACTION_UP): 0:(1065.75,1422.1108)
+:Sending Touch (ACTION_DOWN): 0:(547.0,2065.0)
+:Sending Touch (ACTION_UP): 0:(602.39197,2115.993)
+:Sending Touch (ACTION_DOWN): 0:(524.0,648.0)
+:Sending Touch (ACTION_UP): 0:(529.0188,656.07513)
+:Sending Touch (ACTION_DOWN): 0:(595.0,1908.0)
+:Sending Touch (ACTION_UP): 0:(592.6643,1907.5504)
+    // Rejecting start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.android.chrome/com.google.android.apps.chrome.Main } in package com.android.chrome
+:Sending Touch (ACTION_DOWN): 0:(1041.0,33.0)
+:Sending Touch (ACTION_UP): 0:(1020.22736,27.107794)
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+:Sending Touch (ACTION_DOWN): 0:(993.0,878.0)
+:Sending Touch (ACTION_UP): 0:(993.7982,867.05457)
+:Sending Touch (ACTION_DOWN): 0:(791.0,1252.0)
+:Sending Touch (ACTION_UP): 0:(796.9318,1254.2156)
+// CRASH: cc.tomko.outify (pid 6573)
+// Short Msg: java.lang.UnsatisfiedLinkError
+// Long Msg: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// Build Label: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+// Build Changelist: 12342917
+// Build Time: 1725920748000
+// java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+// 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+// 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+// 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+// 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+// 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+// 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+// 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+// 	Suppressed: z32: [kn8{Cancelling}@b045e47, Dispatchers.IO]
+// 
+:Sending Touch (ACTION_DOWN): 0:(620.0,837.0)
+:Sending Touch (ACTION_UP): 0:(611.9494,826.0077)
+:Sending Touch (ACTION_DOWN): 0:(1049.0,1274.0)
+:Sending Touch (ACTION_UP): 0:(1033.9037,1292.0771)
+:Sending Touch (ACTION_DOWN): 0:(757.0,1091.0)
+:Sending Touch (ACTION_UP): 0:(753.71,1102.9736)
+:Sending Touch (ACTION_DOWN): 0:(1000.0,236.0)
+:Sending Touch (ACTION_UP): 0:(1008.49554,221.5137)
+    //[calendar_time:2026-11-11 16:26:35.359  system_uptime:212828]
+    // Sending event #300
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+:Sending Touch (ACTION_DOWN): 0:(688.0,1357.0)
+:Sending Touch (ACTION_UP): 0:(692.6889,1353.1462)
+:Sending Touch (ACTION_DOWN): 0:(768.0,561.0)
+:Sending Touch (ACTION_UP): 0:(771.9249,557.11584)
+:Sending Touch (ACTION_DOWN): 0:(1056.0,1150.0)
+:Sending Touch (ACTION_UP): 0:(919.7764,1080.8691)
+// CRASH: cc.tomko.outify (pid 6613)
+// Short Msg: java.lang.UnsatisfiedLinkError
+// Long Msg: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// Build Label: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+// Build Changelist: 12342917
+// Build Time: 1725920748000
+// java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+// 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+// 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+// 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+// 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+// 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+// 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+// 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+// 	Suppressed: z32: [kn8{Cancelling}@992fd55, Dispatchers.IO]
+// 
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+// CRASH: cc.tomko.outify (pid 6657)
+// Short Msg: java.lang.UnsatisfiedLinkError
+// Long Msg: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// Build Label: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+// Build Changelist: 12342917
+// Build Time: 1725920748000
+// java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+// 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+// 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+// 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+// 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+// 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+// 	Suppressed: z32: [kn8{Cancelling}@833ceae, Dispatchers.IO]
+// 
+:Sending Touch (ACTION_DOWN): 0:(346.0,1626.0)
+:Sending Touch (ACTION_UP): 0:(349.2009,1626.0264)
+:Sending Touch (ACTION_DOWN): 0:(777.0,1031.0)
+:Sending Touch (ACTION_UP): 0:(774.14,1028.8037)
+:Sending Touch (ACTION_DOWN): 0:(645.0,1666.0)
+:Sending Touch (ACTION_UP): 0:(636.6586,1664.4333)
+    // Rejecting start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.google.android.apps.photos/.home.HomeActivity } in package com.google.android.apps.photos
+:Sending Touch (ACTION_DOWN): 0:(402.0,305.0)
+:Sending Touch (ACTION_UP): 0:(404.30667,303.87845)
+    // Rejecting start of Intent { act=android.intent.action.VIEW dat=content://com.android.calendar/... cmp=com.google.android.calendar/com.android.calendar.AllInOneActivity } in package com.google.android.calendar
+:Sending Touch (ACTION_DOWN): 0:(988.0,14.0)
+:Sending Touch (ACTION_UP): 0:(986.51514,14.326026)
+:Sending Touch (ACTION_DOWN): 0:(480.0,1781.0)
+:Sending Touch (ACTION_UP): 0:(494.07657,1838.0748)
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+// CRASH: cc.tomko.outify (pid 6698)
+// Short Msg: java.lang.UnsatisfiedLinkError
+// Long Msg: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// Build Label: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+// Build Changelist: 12342917
+// Build Time: 1725920748000
+// java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+// 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+// 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+// 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+// 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+// 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+// 	Suppressed: z32: [kn8{Cancelling}@f7a0698, Dispatchers.IO]
+// 
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+:Sending Touch (ACTION_DOWN): 0:(1078.0,1630.0)
+:Sending Touch (ACTION_UP): 0:(1080.0,1638.3457)
+:Sending Touch (ACTION_DOWN): 0:(866.0,1768.0)
+:Sending Touch (ACTION_UP): 0:(867.683,1768.1125)
+// CRASH: cc.tomko.outify (pid 6728)
+// Short Msg: java.lang.UnsatisfiedLinkError
+// Long Msg: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// Build Label: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+// Build Changelist: 12342917
+// Build Time: 1725920748000
+// java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+// 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+// 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+// 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+// 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+// 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+// 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+// 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+// 	Suppressed: z32: [kn8{Cancelling}@17227ba, Dispatchers.IO]
+// 
+:Sending Touch (ACTION_DOWN): 0:(820.0,463.0)
+:Sending Touch (ACTION_UP): 0:(807.0766,472.9311)
+:Sending Touch (ACTION_DOWN): 0:(747.0,288.0)
+:Sending Touch (ACTION_UP): 0:(748.0898,289.07504)
+:Sending Touch (ACTION_DOWN): 0:(447.0,1637.0)
+:Sending Touch (ACTION_UP): 0:(437.76462,1637.3865)
+:Sending Touch (ACTION_DOWN): 0:(1001.0,1729.0)
+:Sending Touch (ACTION_UP): 0:(986.567,1739.0199)
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+:Sending Touch (ACTION_DOWN): 0:(118.0,1979.0)
+:Sending Touch (ACTION_UP): 0:(123.9086,1899.2935)
+:Sending Touch (ACTION_DOWN): 0:(981.0,261.0)
+:Sending Touch (ACTION_UP): 0:(994.2403,260.4419)
+// CRASH: cc.tomko.outify (pid 6761)
+// Short Msg: java.lang.UnsatisfiedLinkError
+// Long Msg: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// Build Label: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+// Build Changelist: 12342917
+// Build Time: 1725920748000
+// java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+// 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+// 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+// 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+// 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+// 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+// 	Suppressed: z32: [kn8{Cancelling}@833ceae, Dispatchers.IO]
+// 
+:Sending Touch (ACTION_DOWN): 0:(592.0,346.0)
+:Sending Touch (ACTION_UP): 0:(598.6112,359.18488)
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+:Sending Touch (ACTION_DOWN): 0:(488.0,1814.0)
+:Sending Touch (ACTION_UP): 0:(487.31683,1824.8335)
+// CRASH: cc.tomko.outify (pid 6810)
+// Short Msg: java.lang.UnsatisfiedLinkError
+// Long Msg: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// Build Label: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+// Build Changelist: 12342917
+// Build Time: 1725920748000
+// java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+// 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+// 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+// 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+// 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+// 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+// 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+// 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+// 	Suppressed: z32: [kn8{Cancelling}@b0a1bcf, Dispatchers.IO]
+// 
+:Sending Touch (ACTION_DOWN): 0:(268.0,1617.0)
+:Sending Touch (ACTION_UP): 0:(278.0198,1616.9247)
+:Sending Touch (ACTION_DOWN): 0:(393.0,374.0)
+:Sending Touch (ACTION_UP): 0:(450.26862,434.28842)
+:Sending Touch (ACTION_DOWN): 0:(178.0,1302.0)
+:Sending Touch (ACTION_UP): 0:(227.4374,1247.3766)
+:Sending Touch (ACTION_DOWN): 0:(931.0,415.0)
+:Sending Touch (ACTION_UP): 0:(931.79645,417.25653)
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+:Sending Touch (ACTION_DOWN): 0:(718.0,959.0)
+:Sending Touch (ACTION_UP): 0:(713.01917,940.2483)
+    //[calendar_time:2026-11-11 16:26:46.563  system_uptime:224032]
+    // Sending event #400
+    //[calendar_time:2026-11-11 16:26:46.817  system_uptime:224286]
+    // Sending event #400
+:Sending Touch (ACTION_DOWN): 0:(687.0,1122.0)
+:Sending Touch (ACTION_UP): 0:(677.8745,1126.4916)
+// CRASH: cc.tomko.outify (pid 6883)
+// Short Msg: java.lang.UnsatisfiedLinkError
+// Long Msg: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// Build Label: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+// Build Changelist: 12342917
+// Build Time: 1725920748000
+// java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+// 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+// 	at qj9.n(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:27)
+// 	at c1.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:23)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:33)
+// 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+// 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+// 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+// 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+// 	Suppressed: z32: [kn8{Cancelling}@18c87dc, Dispatchers.IO]
+// 
+:Sending Touch (ACTION_DOWN): 0:(637.0,1521.0)
+:Sending Touch (ACTION_UP): 0:(631.781,1526.4136)
+:Sending Touch (ACTION_DOWN): 0:(616.0,1584.0)
+:Sending Touch (ACTION_UP): 0:(512.5161,1693.0101)
+:Sending Touch (ACTION_DOWN): 0:(268.0,1822.0)
+:Sending Touch (ACTION_UP): 0:(260.3276,1823.6531)
+:Sending Touch (ACTION_DOWN): 0:(622.0,1414.0)
+:Sending Touch (ACTION_UP): 0:(634.8662,1422.8466)
+    // Rejecting start of Intent { cmp=com.android.settings/.HelpTrampoline } in package com.android.settings
+:Sending Touch (ACTION_DOWN): 0:(222.0,1619.0)
+:Sending Touch (ACTION_UP): 0:(218.36777,1618.8131)
+:Sending Touch (ACTION_DOWN): 0:(653.0,1299.0)
+:Sending Touch (ACTION_UP): 0:(597.58704,1228.7632)
+:Sending Touch (ACTION_DOWN): 0:(495.0,640.0)
+:Sending Touch (ACTION_UP): 0:(478.77066,628.12244)
+:Sending Touch (ACTION_DOWN): 0:(249.0,620.0)
+:Sending Touch (ACTION_UP): 0:(251.79564,620.53314)
+:Sending Touch (ACTION_DOWN): 0:(70.0,449.0)
+:Sending Touch (ACTION_UP): 0:(74.8726,440.9002)
+// CRASH: cc.tomko.outify (pid 6992)
+// Short Msg: java.lang.UnsatisfiedLinkError
+// Long Msg: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// Build Label: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+// Build Changelist: 12342917
+// Build Time: 1725920748000
+// java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+// 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+// 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+// 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+// 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+// 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+// 	Suppressed: z32: [kn8{Cancelling}@d30e92d, Dispatchers.IO]
+// 
+:Sending Touch (ACTION_DOWN): 0:(870.0,1462.0)
+:Sending Touch (ACTION_UP): 0:(870.4342,1473.082)
+:Sending Touch (ACTION_DOWN): 0:(335.0,232.0)
+:Sending Touch (ACTION_UP): 0:(324.55228,231.66571)
+:Sending Touch (ACTION_DOWN): 0:(905.0,582.0)
+:Sending Touch (ACTION_UP): 0:(903.0449,576.1433)
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=cc.tomko.outify/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=cc.tomko.outify/.MainActivity } in package cc.tomko.outify
+:Sending Touch (ACTION_DOWN): 0:(341.0,805.0)
+:Sending Touch (ACTION_UP): 0:(346.18607,805.48553)
+:Sending Touch (ACTION_DOWN): 0:(131.0,578.0)
+:Sending Touch (ACTION_UP): 0:(128.65968,575.81995)
+// CRASH: cc.tomko.outify (pid 7080)
+// Short Msg: java.lang.UnsatisfiedLinkError
+// Long Msg: java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// Build Label: google/sdk_gphone64_x86_64/emu64x:13/TE1A.240213.009/12342917:userdebug/dev-keys
+// Build Changelist: 12342917
+// Build Time: 1725920748000
+// java.lang.UnsatisfiedLinkError: No implementation found for void cc.tomko.outify.LibrespotFfi.libInit(android.content.Context, java.lang.String, java.lang.String) (tried Java_cc_tomko_outify_LibrespotFfi_libInit and Java_cc_tomko_outify_LibrespotFfi_libInit__Landroid_content_Context_2Ljava_lang_String_2Ljava_lang_String_2)
+// 	at cc.tomko.outify.LibrespotFfi.libInit(Native Method)
+// 	at cc.tomko.outify.OutifyApplication$a.r(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:77)
+// 	at ka0.m(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:8)
+// 	at x42.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:114)
+// 	at gi4$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:4)
+// 	at px8.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:3)
+// 	at ir1$a.run(r8-map-id-1ef5eb0dd71ba25cabb28dc9bec35103170d97d08be8b7c5283083dc95ac3c93:94)
+// 	Suppressed: z32: [kn8{Cancelling}@aad2e62, Dispatchers.IO]
+// 
+:Sending Touch (ACTION_DOWN): 0:(567.0,1687.0)
+:Sending Touch (ACTION_UP): 0:(567.70935,1691.3115)
+:Sending Touch (ACTION_DOWN): 0:(961.0,185.0)
+:Sending Touch (ACTION_UP): 0:(938.34753,176.7781)
+:Sending Touch (ACTION_DOWN): 0:(1062.0,2100.0)
+:Sending Touch (ACTION_UP): 0:(1077.7703,2104.5022)
+:Sending Touch (ACTION_DOWN): 0:(544.0,1417.0)
+:Sending Touch (ACTION_UP): 0:(533.886,1414.9197)
+:Sending Touch (ACTION_DOWN): 0:(364.0,429.0)
+:Sending Touch (ACTION_UP): 0:(382.45102,450.99585)
+:Sending Touch (ACTION_DOWN): 0:(470.0,318.0)
+:Sending Touch (ACTION_UP): 0:(468.91513,240.3927)
+:Sending Touch (ACTION_DOWN): 0:(944.0,695.0)
+:Sending Touch (ACTION_UP): 0:(943.3386,701.19604)
+:Sending Touch (ACTION_DOWN): 0:(458.0,1369.0)
+:Sending Touch (ACTION_UP): 0:(452.1648,1383.8717)
+:Sending Touch (ACTION_DOWN): 0:(739.0,597.0)
+:Sending Touch (ACTION_UP): 0:(738.25793,595.8249)
+    // Rejecting start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.google.android.apps.photos/.home.HomeActivity } in package com.google.android.apps.photos
+:Sending Touch (ACTION_DOWN): 0:(826.0,1473.0)
+Events injected: 500
+:Sending rotation degree=0, persist=false
+:Dropped: keys=0 pointers=2 trackballs=0 flips=0 rotations=0
+## Network stats: elapsed time=67839ms (0ms mobile, 0ms wifi, 67839ms not connected)
+// Monkey finished
