@@ -116,7 +116,7 @@ jobs:
           # onto the rebuilt unsigned APK, then verifies it with apksigner.
           # A successful verification proves the rebuilt APK matches the
           # signed reference under F-Droid's reproducible-build procedure.
-          if apksigcopier compare "$RELEASE_APK" "$BUILT_APK"; then
+          if apksigcopier compare --unsigned "$RELEASE_APK" "$BUILT_APK"; then
             echo 'result=VERIFIED' >> "$GITHUB_OUTPUT"
             echo 'F-DROID REPRODUCIBLE BUILD VERIFICATION PASSED'
           else
