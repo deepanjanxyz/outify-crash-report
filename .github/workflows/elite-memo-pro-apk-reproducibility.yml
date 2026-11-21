@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   verify:
-    name: Build and compare universal unsigned APK
+    name: Build and verify universal APK using F-Droid method
     runs-on: ubuntu-latest
     timeout-minutes: 60
 
@@ -44,7 +44,7 @@ jobs:
         with:
           packages: ''
 
-      - name: Build unsigned release APKs
+      - name: Build unsigned release APK
         working-directory: notepad
         run: |
           set -euo pipefail
@@ -80,8 +80,23 @@ jobs:
             --output comparison/EliteMemoPro-v1.0.32-rc01-32-universal.apk
           test -s comparison/EliteMemoPro-v1.0.32-rc01-32-universal.apk
 
-      - name: Compare universal APKs byte-for-byte
-        id: compare
+      - name: Install F-Droid APK signature verification tool
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m venv "$RUNNER_TEMP/apksigcopier-venv"
+          "$RUNNER_TEMP/apksigcopier-venv/bin/pip" install --disable-pip-version-check apksigcopier
+
+          apksigner="$(find "$ANDROID_HOME/build-tools" -type f -name apksigner -print | sort -V | tail -n 1)"
+          if [ -z "$apksigner" ]; then
+            echo "::error::Android apksigner was not found in the installed SDK build-tools."
+            exit 1
+          fi
+          echo "$(dirname "$apksigner")" >> "$GITHUB_PATH"
+          echo "$RUNNER_TEMP/apksigcopier-venv/bin" >> "$GITHUB_PATH"
+
+      - name: Verify rebuilt APK using F-Droid signature-copy method
+        id: verify
         shell: bash
         env:
           BUILT_APK: ${{ steps.built.outputs.path }}
@@ -89,26 +104,24 @@ jobs:
         run: |
           set -euo pipefail
 
-          echo '--- Generated universal APK ---'
+          echo '--- Generated unsigned APK ---'
           sha256sum "$BUILT_APK"
-          stat --printf='Size: %s bytes\n' "$BUILT_APK"
+          stat --printf='Size: %s bytes\\n' "$BUILT_APK"
 
-          echo '--- Published F-Droid universal APK ---'
+          echo '--- Published F-Droid APK ---'
           sha256sum "$RELEASE_APK"
-          stat --printf='Size: %s bytes\n' "$RELEASE_APK"
+          stat --printf='Size: %s bytes\\n' "$RELEASE_APK"
 
-          if cmp --silent -- "$BUILT_APK" "$RELEASE_APK"; then
-            echo 'result=MATCH' >> "$GITHUB_OUTPUT"
-            echo 'BYTE-TO-BYTE MATCH'
-            echo 'The generated universal unsigned APK is identical to the published F-Droid APK.'
+          # F-Droid copies the published APK's v1/v2/v3 signature metadata
+          # onto the rebuilt unsigned APK, then verifies it with apksigner.
+          # A successful verification proves the rebuilt APK matches the
+          # signed reference under F-Droid's reproducible-build procedure.
+          if apksigcopier compare "$RELEASE_APK" "$BUILT_APK"; then
+            echo 'result=VERIFIED' >> "$GITHUB_OUTPUT"
+            echo 'F-DROID REPRODUCIBLE BUILD VERIFICATION PASSED'
           else
-            echo 'result=MISMATCH' >> "$GITHUB_OUTPUT"
-            echo '::error title=BYTE-TO-BYTE MISMATCH::The generated universal APK differs from the published F-Droid APK.'
-            echo 'BYTE-TO-BYTE MISMATCH'
-            if ! cmp --silent -- "$BUILT_APK" "$RELEASE_APK"; then
-              echo 'First differing byte (if both files overlap):'
-              cmp --verbose -- "$BUILT_APK" "$RELEASE_APK" | head -n 10 || true
-            fi
+            echo 'result=NOT_VERIFIED' >> "$GITHUB_OUTPUT"
+            echo '::error title=F-DROID VERIFICATION FAILED::The rebuilt APK does not verify against the published F-Droid APK signature.'
             exit 1
           fi
 
@@ -116,7 +129,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v7.0.2
         with:
-          name: elite-memo-pro-v1.0.32-rc01-universal-apk-comparison
+          name: elite-memo-pro-v1.0.32-rc01-universal-apk-verification
           path: |
             ${{ steps.built.outputs.path }}
             comparison/EliteMemoPro-v1.0.32-rc01-32-universal.apk
