@@ -1,0 +1,124 @@
+name: Elite Memo Pro APK Reproducibility
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: elite-memo-pro-apk-reproducibility
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    name: Build and compare universal unsigned APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout verification repository
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Checkout Elite Memo Pro source at release tag
+        uses: actions/checkout@v7.0.1
+        with:
+          repository: deepanjanxyz/notepad
+          ref: v1.0.32-rc01
+          path: notepad
+          persist-credentials: false
+
+      - name: Set up JDK 25
+        uses: actions/setup-java@v6.3.0
+        with:
+          distribution: temurin
+          java-version: '25'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v6.4.1
+
+      - name: Set up Android SDK tools
+        uses: android-actions/setup-android@v4.0.4
+        with:
+          packages: ''
+
+      - name: Build unsigned release APKs
+        working-directory: notepad
+        run: |
+          set -euo pipefail
+          chmod +x ./gradlew
+          ./gradlew assembleRelease --no-daemon --parallel --warning-mode all
+
+      - name: Select the universal unsigned APK
+        id: built
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          mapfile -t apks < <(
+            find notepad/app/build/outputs/apk/release -maxdepth 1 -type f \
+              -name '*universal*release*unsigned.apk' -print | sort
+          )
+
+          if [ "${#apks[@]}" -ne 1 ]; then
+            echo "::error::Expected exactly one universal unsigned release APK; found ${#apks[@]}."
+            find notepad/app/build/outputs/apk/release -maxdepth 1 -type f -name '*.apk' -print || true
+            exit 1
+          fi
+
+          echo "path=${apks[0]}" >> "$GITHUB_OUTPUT"
+          echo "Generated universal APK: ${apks[0]}"
+
+      - name: Download the published F-Droid APK
+        run: |
+          set -euo pipefail
+          mkdir -p comparison
+          curl --fail --location --retry 3 --retry-all-errors \
+            'https://github.com/deepanjanxyz/notepad/releases/download/v1.0.32-rc01/EliteMemoPro-v1.0.32-rc01-32-universal.apk' \
+            --output comparison/EliteMemoPro-v1.0.32-rc01-32-universal.apk
+          test -s comparison/EliteMemoPro-v1.0.32-rc01-32-universal.apk
+
+      - name: Compare universal APKs byte-for-byte
+        id: compare
+        shell: bash
+        env:
+          BUILT_APK: ${{ steps.built.outputs.path }}
+          RELEASE_APK: comparison/EliteMemoPro-v1.0.32-rc01-32-universal.apk
+        run: |
+          set -euo pipefail
+
+          echo '--- Generated universal APK ---'
+          sha256sum "$BUILT_APK"
+          stat --printf='Size: %s bytes\n' "$BUILT_APK"
+
+          echo '--- Published F-Droid universal APK ---'
+          sha256sum "$RELEASE_APK"
+          stat --printf='Size: %s bytes\n' "$RELEASE_APK"
+
+          if cmp --silent -- "$BUILT_APK" "$RELEASE_APK"; then
+            echo 'result=MATCH' >> "$GITHUB_OUTPUT"
+            echo 'BYTE-TO-BYTE MATCH'
+            echo 'The generated universal unsigned APK is identical to the published F-Droid APK.'
+          else
+            echo 'result=MISMATCH' >> "$GITHUB_OUTPUT"
+            echo '::error title=BYTE-TO-BYTE MISMATCH::The generated universal APK differs from the published F-Droid APK.'
+            echo 'BYTE-TO-BYTE MISMATCH'
+            if ! cmp --silent -- "$BUILT_APK" "$RELEASE_APK"; then
+              echo 'First differing byte (if both files overlap):'
+              cmp --verbose -- "$BUILT_APK" "$RELEASE_APK" | head -n 10 || true
+            fi
+            exit 1
+          fi
+
+      - name: Upload both universal APKs for inspection
+        if: always()
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: elite-memo-pro-v1.0.32-rc01-universal-apk-comparison
+          path: |
+            ${{ steps.built.outputs.path }}
+            comparison/EliteMemoPro-v1.0.32-rc01-32-universal.apk
+          if-no-files-found: ignore
+          retention-days: 7
