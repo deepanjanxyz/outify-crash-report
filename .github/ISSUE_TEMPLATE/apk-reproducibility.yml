@@ -1,8 +1,6 @@
 name: APK reproducibility check
 description: Build an unsigned APK from an exact source commit and compare it with a reference APK.
 title: "APK reproducibility check"
-labels:
-  - apk-verification
 body:
   - type: input
     id: source_commit_url
