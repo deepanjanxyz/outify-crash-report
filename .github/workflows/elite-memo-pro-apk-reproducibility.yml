@@ -4,27 +4,25 @@ on:
   issue_comment:
     types: [created]
 
-permissions:
-  contents: read
-  issues: write
-
 concurrency:
   group: apk-reproducibility-issue-${{ github.event.issue.number }}
   cancel-in-progress: false
 
 jobs:
   verify:
-    if: github.event.issue.pull_request == null && github.event.comment.body == '/verify' && contains(fromJSON('[\"OWNER\",\"MEMBER\",\"COLLABORATOR\"]'), github.event.comment.author_association)
+    if: github.event.issue.pull_request == null && github.event.comment.body == '/verify' && contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association)
     name: Build unsigned APK and compare with reference
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    permissions:
+      contents: read
+    outputs:
+      source_url: ${{ steps.inputs.outputs.source_url }}
+      apk_url: ${{ steps.inputs.outputs.apk_url }}
+      inputs_outcome: ${{ steps.inputs.outcome }}
+      comparison_outcome: ${{ steps.comparison.outcome }}
 
     steps:
-      - name: Checkout verification workflow
-        uses: actions/checkout@v7.0.1
-        with:
-          persist-credentials: false
-
       - name: Read and validate the two issue-form URLs
         id: inputs
         shell: bash
@@ -33,7 +31,7 @@ jobs:
         run: |
           set -euo pipefail
           python3 <<'PY'
-          import json, os, re, sys
+          import json, os, re
           from urllib.parse import urlparse
 
           with open(os.environ["EVENT_PATH"], encoding="utf-8") as f:
@@ -41,8 +39,7 @@ jobs:
           body = event["issue"].get("body") or ""
 
           def field(label):
-              pattern = rf"(?m)^### {re.escape(label)}\s*\n+([^\n]+)"
-              match = re.search(pattern, body)
+              match = re.search(rf"(?m)^### {re.escape(label)}\\s*\\n+([^\\n]+)", body)
               if not match:
                   raise SystemExit(f"Missing issue-form field: {label}")
               value = match.group(1).strip()
@@ -52,7 +49,6 @@ jobs:
 
           source_url = field("Source commit URL")
           apk_url = field("Reference APK URL")
-
           parsed = urlparse(source_url)
           parts = parsed.path.strip("/").split("/")
           if (parsed.scheme != "https" or parsed.netloc.lower() != "github.com"
@@ -65,10 +61,10 @@ jobs:
               raise SystemExit("Reference APK URL must be a direct HTTPS URL ending in .apk")
 
           with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as out:
-              out.write(f"source_repo={parts[0]}/{parts[1]}\n")
-              out.write(f"source_sha={parts[3].lower()}\n")
-              out.write(f"source_url={source_url}\n")
-              out.write(f"apk_url={apk_url}\n")
+              out.write(f"source_repo={parts[0]}/{parts[1]}\\n")
+              out.write(f"source_sha={parts[3].lower()}\\n")
+              out.write(f"source_url={source_url}\\n")
+              out.write(f"apk_url={apk_url}\\n")
           PY
 
       - name: Set up JDK 25
@@ -112,7 +108,7 @@ jobs:
         run: |
           set -euo pipefail
           mapfile -t apks < <(
-            find source/app/build/outputs/apk/release -maxdepth 1 -type f \
+            find source/app/build/outputs/apk/release -maxdepth 1 -type f \\
               -name '*universal*release*unsigned.apk' -print | sort
           )
           if [ "${#apks[@]}" -ne 1 ]; then
@@ -121,16 +117,14 @@ jobs:
             exit 1
           fi
           echo "path=${apks[0]}" >> "$GITHUB_OUTPUT"
-          echo "Generated universal APK: ${apks[0]}"
 
       - name: Download reference APK
         if: steps.inputs.outcome == 'success'
         run: |
           set -euo pipefail
           mkdir -p comparison
-          curl --fail --location --retry 3 --retry-all-errors \
-            "${{ steps.inputs.outputs.apk_url }}" \
-            --output comparison/reference.apk
+          curl --fail --location --retry 3 --retry-all-errors \\
+            "${{ steps.inputs.outputs.apk_url }}" --output comparison/reference.apk
           test -s comparison/reference.apk
           file comparison/reference.apk
 
@@ -151,49 +145,47 @@ jobs:
 
       - name: Compare rebuilt APK with the reference signature
         if: steps.inputs.outcome == 'success'
-        id: verify
+        id: comparison
         shell: bash
         run: |
           set -euo pipefail
           echo '--- Generated unsigned APK ---'
-          sha256sum "${{ steps.built.outputs.path }}" | tee "$RUNNER_TEMP/built-sha.txt"
-          stat --printf='Size: %s bytes\n' "${{ steps.built.outputs.path }}"
+          sha256sum "${{ steps.built.outputs.path }}"
+          stat --printf='Size: %s bytes\\n' "${{ steps.built.outputs.path }}"
           echo '--- Reference APK ---'
-          sha256sum comparison/reference.apk | tee "$RUNNER_TEMP/reference-sha.txt"
-          stat --printf='Size: %s bytes\n' comparison/reference.apk
-          if apksigcopier compare --unsigned comparison/reference.apk "${{ steps.built.outputs.path }}"; then
-            echo "result=PASS" >> "$GITHUB_OUTPUT"
-            echo "APK_REPRODUCIBILITY_RESULT=PASS"
-          else
-            echo "result=FAIL" >> "$GITHUB_OUTPUT"
-            echo "::error title=APK verification failed::The rebuilt unsigned APK does not match the reference APK signature."
-            exit 1
-          fi
+          sha256sum comparison/reference.apk
+          stat --printf='Size: %s bytes\\n' comparison/reference.apk
+          apksigcopier compare --unsigned comparison/reference.apk "${{ steps.built.outputs.path }}"
+          echo "result=PASS" >> "$GITHUB_OUTPUT"
+          echo "APK_REPRODUCIBILITY_RESULT=PASS"
 
-      - name: Comment the final result on this issue
-        if: always()
+  report:
+    if: always() && github.event.issue.pull_request == null && github.event.comment.body == '/verify' && contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association)
+    needs: verify
+    name: Comment result on the issue
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Publish the final result
         env:
           GH_TOKEN: ${{ github.token }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
-          INPUTS_OUTCOME: ${{ steps.inputs.outcome }}
-          SOURCE_URL: ${{ steps.inputs.outputs.source_url }}
-          APK_URL: ${{ steps.inputs.outputs.apk_url }}
-          VERIFY_OUTCOME: ${{ steps.verify.outcome }}
+          VERIFY_RESULT: ${{ needs.verify.result }}
+          INPUTS_OUTCOME: ${{ needs.verify.outputs.inputs_outcome }}
+          SOURCE_URL: ${{ needs.verify.outputs.source_url }}
+          APK_URL: ${{ needs.verify.outputs.apk_url }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         shell: bash
         run: |
           set -euo pipefail
-          if [ "$INPUTS_OUTCOME" != "success" ]; then
-            status="FAILED"
-            details="The issue form fields were missing or invalid. Use the provided two-field issue template."
-          elif [ "$VERIFY_OUTCOME" = "success" ]; then
+          if [ "$VERIFY_RESULT" = "success" ] && [ "$INPUTS_OUTCOME" = "success" ]; then
             status="SUCCESS"
             details="The unsigned APK rebuilt from the supplied commit passed the reference APK signature comparison."
           else
             status="FAILED"
-            details="The build or APK comparison failed. Open the workflow run for the failing step and logs."
+            details="The source build, input validation, or APK comparison failed. Open the workflow run for the exact failing step and logs."
           fi
-
           {
             echo "<!-- apk-reproducibility-result -->"
             echo "## APK reproducibility result: $status"
@@ -207,9 +199,9 @@ jobs:
 
           existing_id="$(gh api "repos/$GITHUB_REPOSITORY/issues/$ISSUE_NUMBER/comments" --paginate --jq '.[] | select(.body | contains("<!-- apk-reproducibility-result -->")) | .id' | tail -n 1)"
           if [ -n "$existing_id" ]; then
-            gh api --method PATCH "repos/$GITHUB_REPOSITORY/issues/comments/$existing_id" \
+            gh api --method PATCH "repos/$GITHUB_REPOSITORY/issues/comments/$existing_id" \\
               -f body="$(cat "$RUNNER_TEMP/issue-comment.md")" >/dev/null
           else
-            gh issue comment "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" \
+            gh issue comment "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" \\
               --body-file "$RUNNER_TEMP/issue-comment.md"
           fi
