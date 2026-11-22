@@ -1,92 +1,146 @@
-name: Elite Memo Pro APK Reproducibility
+name: APK Reproducibility Check
 
 on:
-  workflow_dispatch:
+  issue_comment:
+    types: [created]
 
 permissions:
   contents: read
+  issues: write
 
 concurrency:
-  group: elite-memo-pro-apk-reproducibility
+  group: apk-reproducibility-issue-${{ github.event.issue.number }}
   cancel-in-progress: false
 
 jobs:
   verify:
-    name: Build and verify universal APK using F-Droid method
+    if: github.event.issue.pull_request == null && github.event.comment.user.type != 'Bot'
+    name: Build unsigned APK and compare with reference
     runs-on: ubuntu-latest
     timeout-minutes: 60
 
     steps:
-      - name: Checkout verification repository
+      - name: Checkout verification workflow
         uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
-      - name: Checkout Elite Memo Pro source at release tag
-        uses: actions/checkout@v7.0.1
-        with:
-          repository: deepanjanxyz/notepad
-          ref: v1.0.33
-          path: notepad
-          persist-credentials: false
+      - name: Read and validate the two issue-form URLs
+        id: inputs
+        shell: bash
+        env:
+          EVENT_PATH: ${{ github.event_path }}
+        run: |
+          set -euo pipefail
+          python3 <<'PY'
+          import json, os, re, sys
+          from urllib.parse import urlparse
+
+          with open(os.environ["EVENT_PATH"], encoding="utf-8") as f:
+              event = json.load(f)
+          body = event["issue"].get("body") or ""
+
+          def field(label):
+              pattern = rf"(?m)^### {re.escape(label)}\s*\n+([^\n]+)"
+              match = re.search(pattern, body)
+              if not match:
+                  raise SystemExit(f"Missing issue-form field: {label}")
+              value = match.group(1).strip()
+              if not value or value == "_No response_":
+                  raise SystemExit(f"Empty issue-form field: {label}")
+              return value
+
+          source_url = field("Source commit URL")
+          apk_url = field("Reference APK URL")
+
+          parsed = urlparse(source_url)
+          parts = parsed.path.strip("/").split("/")
+          if (parsed.scheme != "https" or parsed.netloc.lower() != "github.com"
+              or len(parts) != 4 or parts[2] != "commit"
+              or not re.fullmatch(r"[0-9a-fA-F]{40}", parts[3])):
+              raise SystemExit("Source URL must be https://github.com/OWNER/REPO/commit/<40-character-commit-SHA>")
+
+          apk = urlparse(apk_url)
+          if apk.scheme != "https" or not apk.netloc or not apk.path.lower().endswith(".apk"):
+              raise SystemExit("Reference APK URL must be a direct HTTPS URL ending in .apk")
+
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as out:
+              out.write(f"source_repo={parts[0]}/{parts[1]}\n")
+              out.write(f"source_sha={parts[3].lower()}\n")
+              out.write(f"source_url={source_url}\n")
+              out.write(f"apk_url={apk_url}\n")
+          PY
 
       - name: Set up JDK 25
+        if: steps.inputs.outcome == 'success'
         uses: actions/setup-java@v6.3.0
         with:
           distribution: temurin
           java-version: '25'
 
       - name: Set up Gradle
+        if: steps.inputs.outcome == 'success'
         uses: gradle/actions/setup-gradle@v6.4.1
 
       - name: Set up Android SDK tools
+        if: steps.inputs.outcome == 'success'
         uses: android-actions/setup-android@v4.0.4
         with:
           packages: ''
 
+      - name: Checkout source at the exact commit
+        if: steps.inputs.outcome == 'success'
+        uses: actions/checkout@v7.0.1
+        with:
+          repository: ${{ steps.inputs.outputs.source_repo }}
+          ref: ${{ steps.inputs.outputs.source_sha }}
+          path: source
+          persist-credentials: false
+
       - name: Build unsigned release APK
-        working-directory: notepad
+        if: steps.inputs.outcome == 'success'
+        working-directory: source
         run: |
           set -euo pipefail
           chmod +x ./gradlew
           ./gradlew assembleRelease --no-daemon --parallel --warning-mode all
 
       - name: Select the universal unsigned APK
+        if: steps.inputs.outcome == 'success'
         id: built
         shell: bash
         run: |
           set -euo pipefail
-
           mapfile -t apks < <(
-            find notepad/app/build/outputs/apk/release -maxdepth 1 -type f \
+            find source/app/build/outputs/apk/release -maxdepth 1 -type f \
               -name '*universal*release*unsigned.apk' -print | sort
           )
-
           if [ "${#apks[@]}" -ne 1 ]; then
             echo "::error::Expected exactly one universal unsigned release APK; found ${#apks[@]}."
-            find notepad/app/build/outputs/apk/release -maxdepth 1 -type f -name '*.apk' -print || true
+            find source/app/build/outputs/apk/release -maxdepth 1 -type f -name '*.apk' -print || true
             exit 1
           fi
-
           echo "path=${apks[0]}" >> "$GITHUB_OUTPUT"
           echo "Generated universal APK: ${apks[0]}"
 
-      - name: Download the published F-Droid APK
+      - name: Download reference APK
+        if: steps.inputs.outcome == 'success'
         run: |
           set -euo pipefail
           mkdir -p comparison
           curl --fail --location --retry 3 --retry-all-errors \
-            'https://github.com/deepanjanxyz/notepad/releases/download/v1.0.33/EliteMemoPro-v1.0.33-33-universal.apk' \
-            --output comparison/EliteMemoPro-v1.0.33-33-universal.apk
-          test -s comparison/EliteMemoPro-v1.0.33-33-universal.apk
+            "${{ steps.inputs.outputs.apk_url }}" \
+            --output comparison/reference.apk
+          test -s comparison/reference.apk
+          file comparison/reference.apk
 
-      - name: Install F-Droid APK signature verification tool
+      - name: Install APK signature verification tool
+        if: steps.inputs.outcome == 'success'
         shell: bash
         run: |
           set -euo pipefail
           python3 -m venv "$RUNNER_TEMP/apksigcopier-venv"
           "$RUNNER_TEMP/apksigcopier-venv/bin/pip" install --disable-pip-version-check apksigcopier
-
           apksigner="$(find "$ANDROID_HOME/build-tools" -type f -name apksigner -print | sort -V | tail -n 1)"
           if [ -z "$apksigner" ]; then
             echo "::error::Android apksigner was not found in the installed SDK build-tools."
@@ -95,43 +149,67 @@ jobs:
           echo "$(dirname "$apksigner")" >> "$GITHUB_PATH"
           echo "$RUNNER_TEMP/apksigcopier-venv/bin" >> "$GITHUB_PATH"
 
-      - name: Verify rebuilt APK using F-Droid signature-copy method
+      - name: Compare rebuilt APK with the reference signature
+        if: steps.inputs.outcome == 'success'
         id: verify
         shell: bash
-        env:
-          BUILT_APK: ${{ steps.built.outputs.path }}
-          RELEASE_APK: comparison/EliteMemoPro-v1.0.33-33-universal.apk
         run: |
           set -euo pipefail
-
           echo '--- Generated unsigned APK ---'
-          sha256sum "$BUILT_APK"
-          stat --printf='Size: %s bytes\\n' "$BUILT_APK"
-
-          echo '--- Published F-Droid APK ---'
-          sha256sum "$RELEASE_APK"
-          stat --printf='Size: %s bytes\\n' "$RELEASE_APK"
-
-          # F-Droid copies the published APK's v1/v2/v3 signature metadata
-          # onto the rebuilt unsigned APK, then verifies it with apksigner.
-          # A successful verification proves the rebuilt APK matches the
-          # signed reference under F-Droid's reproducible-build procedure.
-          if apksigcopier compare --unsigned "$RELEASE_APK" "$BUILT_APK"; then
-            echo 'result=VERIFIED' >> "$GITHUB_OUTPUT"
-            echo 'F-DROID REPRODUCIBLE BUILD VERIFICATION PASSED'
+          sha256sum "${{ steps.built.outputs.path }}" | tee "$RUNNER_TEMP/built-sha.txt"
+          stat --printf='Size: %s bytes\n' "${{ steps.built.outputs.path }}"
+          echo '--- Reference APK ---'
+          sha256sum comparison/reference.apk | tee "$RUNNER_TEMP/reference-sha.txt"
+          stat --printf='Size: %s bytes\n' comparison/reference.apk
+          if apksigcopier compare --unsigned comparison/reference.apk "${{ steps.built.outputs.path }}"; then
+            echo "result=PASS" >> "$GITHUB_OUTPUT"
+            echo "APK_REPRODUCIBILITY_RESULT=PASS"
           else
-            echo 'result=NOT_VERIFIED' >> "$GITHUB_OUTPUT"
-            echo '::error title=F-DROID VERIFICATION FAILED::The rebuilt APK does not verify against the published F-Droid APK signature.'
+            echo "result=FAIL" >> "$GITHUB_OUTPUT"
+            echo "::error title=APK verification failed::The rebuilt unsigned APK does not match the reference APK signature."
             exit 1
           fi
 
-      - name: Upload both universal APKs for inspection
+      - name: Comment the final result on this issue
         if: always()
-        uses: actions/upload-artifact@v7.0.2
-        with:
-          name: elite-memo-pro-v1.0.33-universal-apk-verification
-          path: |
-            ${{ steps.built.outputs.path }}
-            comparison/EliteMemoPro-v1.0.33-33-universal.apk
-          if-no-files-found: ignore
-          retention-days: 7
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          INPUTS_OUTCOME: ${{ steps.inputs.outcome }}
+          SOURCE_URL: ${{ steps.inputs.outputs.source_url }}
+          APK_URL: ${{ steps.inputs.outputs.apk_url }}
+          VERIFY_OUTCOME: ${{ steps.verify.outcome }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "$INPUTS_OUTCOME" != "success" ]; then
+            status="FAILED"
+            details="The issue form fields were missing or invalid. Use the provided two-field issue template."
+          elif [ "$VERIFY_OUTCOME" = "success" ]; then
+            status="SUCCESS"
+            details="The unsigned APK rebuilt from the supplied commit passed the reference APK signature comparison."
+          else
+            status="FAILED"
+            details="The build or APK comparison failed. Open the workflow run for the failing step and logs."
+          fi
+
+          {
+            echo "<!-- apk-reproducibility-result -->"
+            echo "## APK reproducibility result: $status"
+            echo
+            echo "$details"
+            echo
+            [ -z "$SOURCE_URL" ] || echo "- Source commit: $SOURCE_URL"
+            [ -z "$APK_URL" ] || echo "- Reference APK: $APK_URL"
+            echo "- Workflow run: $RUN_URL"
+          } > "$RUNNER_TEMP/issue-comment.md"
+
+          existing_id="$(gh api "repos/$GITHUB_REPOSITORY/issues/$ISSUE_NUMBER/comments" --paginate --jq '.[] | select(.body | contains("<!-- apk-reproducibility-result -->")) | .id' | tail -n 1)"
+          if [ -n "$existing_id" ]; then
+            gh api --method PATCH "repos/$GITHUB_REPOSITORY/issues/comments/$existing_id" \
+              -f body="$(cat "$RUNNER_TEMP/issue-comment.md")" >/dev/null
+          else
+            gh issue comment "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" \
+              --body-file "$RUNNER_TEMP/issue-comment.md"
+          fi
