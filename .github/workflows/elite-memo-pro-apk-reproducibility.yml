@@ -1,6 +1,8 @@
 name: APK Reproducibility Check
 
 on:
+  issues:
+    types: [opened]
   issue_comment:
     types: [created]
 
@@ -9,22 +11,63 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  request-verification:
+    if: github.event_name == 'issues' && github.event.action == 'opened' && github.event.issue.pull_request == null
+    name: Ask for verification
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: React and explain how to start
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh api --method POST "repos/$GITHUB_REPOSITORY/issues/$ISSUE_NUMBER/reactions" -f content=eyes >/dev/null
+          gh issue comment "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --body \
+            "👀 Verification is waiting. A repository user with **write access or higher** can comment `verify` to start the APK verification. No build starts before that confirmation."
+
   verify:
-    if: github.event.issue.pull_request == null && github.event.comment.body == '/verify' && contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association)
+    if: github.event_name == 'issue_comment' && github.event.issue.pull_request == null && contains(fromJSON('["verify","/verify","VERIFY","/VERIFY","Verify","/Verify"]'), github.event.comment.body)
     name: Build unsigned APK and compare with reference
     runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
       contents: read
+      issues: write
     outputs:
+      authorized: ${{ steps.authorization.outputs.allowed }}
+      authorization_reason: ${{ steps.authorization.outputs.reason }}
       source_url: ${{ steps.inputs.outputs.source_url }}
       apk_url: ${{ steps.inputs.outputs.apk_url }}
       inputs_outcome: ${{ steps.inputs.outcome }}
-      comparison_outcome: ${{ steps.comparison.outcome }}
-
     steps:
+      - name: Confirm the commenter has write access
+        id: authorization
+        env:
+          GH_TOKEN: ${{ github.token }}
+          COMMENT_AUTHOR: ${{ github.event.comment.user.login }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          permission="$(gh api "repos/$GITHUB_REPOSITORY/collaborators/$COMMENT_AUTHOR/permission" --jq '.permission' 2>/dev/null || true)"
+          case "$permission" in
+            admin|maintain|write)
+              echo "allowed=true" >> "$GITHUB_OUTPUT"
+              echo "reason=The commenter has $permission access." >> "$GITHUB_OUTPUT"
+              ;;
+            *)
+              echo "allowed=false" >> "$GITHUB_OUTPUT"
+              echo "reason=Write access could not be confirmed (GitHub returned: ${permission:-no permission})." >> "$GITHUB_OUTPUT"
+              echo "::warning::Verification was not started because the commenter does not have confirmed write access."
+              ;;
+          esac
+
       - name: Read and validate the two issue-form URLs
         id: inputs
+        if: steps.authorization.outputs.allowed == 'true'
         shell: bash
         env:
           EVENT_PATH: ${{ github.event_path }}
@@ -39,7 +82,7 @@ jobs:
           body = event["issue"].get("body") or ""
 
           def field(label):
-              match = re.search(rf"(?m)^### {re.escape(label)}\s*\n+([^\n]+)", body)
+              match = re.search(rf"(?m)^### {re.escape(label)}\\s*\\n+([^\\n]+)", body)
               if not match:
                   raise SystemExit(f"Missing issue-form field: {label}")
               value = match.group(1).strip()
@@ -61,31 +104,31 @@ jobs:
               raise SystemExit("Reference APK URL must be a direct HTTPS URL ending in .apk")
 
           with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as out:
-              out.write(f"source_repo={parts[0]}/{parts[1]}\n")
-              out.write(f"source_sha={parts[3].lower()}\n")
-              out.write(f"source_url={source_url}\n")
-              out.write(f"apk_url={apk_url}\n")
+              out.write(f"source_repo={parts[0]}/{parts[1]}\\n")
+              out.write(f"source_sha={parts[3].lower()}\\n")
+              out.write(f"source_url={source_url}\\n")
+              out.write(f"apk_url={apk_url}\\n")
           PY
 
       - name: Set up JDK 25
-        if: steps.inputs.outcome == 'success'
+        if: steps.authorization.outputs.allowed == 'true' && steps.inputs.outcome == 'success'
         uses: actions/setup-java@v6.3.0
         with:
           distribution: temurin
           java-version: '25'
 
       - name: Set up Gradle
-        if: steps.inputs.outcome == 'success'
+        if: steps.authorization.outputs.allowed == 'true' && steps.inputs.outcome == 'success'
         uses: gradle/actions/setup-gradle@v6.4.1
 
       - name: Set up Android SDK tools
-        if: steps.inputs.outcome == 'success'
+        if: steps.authorization.outputs.allowed == 'true' && steps.inputs.outcome == 'success'
         uses: android-actions/setup-android@v4.0.4
         with:
           packages: ''
 
       - name: Checkout source at the exact commit
-        if: steps.inputs.outcome == 'success'
+        if: steps.authorization.outputs.allowed == 'true' && steps.inputs.outcome == 'success'
         uses: actions/checkout@v7.0.1
         with:
           repository: ${{ steps.inputs.outputs.source_repo }}
@@ -94,7 +137,7 @@ jobs:
           persist-credentials: false
 
       - name: Build unsigned release APK
-        if: steps.inputs.outcome == 'success'
+        if: steps.authorization.outputs.allowed == 'true' && steps.inputs.outcome == 'success'
         working-directory: source
         run: |
           set -euo pipefail
@@ -102,7 +145,7 @@ jobs:
           ./gradlew assembleRelease --no-daemon --parallel --warning-mode all
 
       - name: Select the universal unsigned APK
-        if: steps.inputs.outcome == 'success'
+        if: steps.authorization.outputs.allowed == 'true' && steps.inputs.outcome == 'success'
         id: built
         shell: bash
         run: |
@@ -119,7 +162,7 @@ jobs:
           echo "path=${apks[0]}" >> "$GITHUB_OUTPUT"
 
       - name: Download reference APK
-        if: steps.inputs.outcome == 'success'
+        if: steps.authorization.outputs.allowed == 'true' && steps.inputs.outcome == 'success'
         run: |
           set -euo pipefail
           mkdir -p comparison
@@ -129,7 +172,7 @@ jobs:
           file comparison/reference.apk
 
       - name: Install APK signature verification tool
-        if: steps.inputs.outcome == 'success'
+        if: steps.authorization.outputs.allowed == 'true' && steps.inputs.outcome == 'success'
         shell: bash
         run: |
           set -euo pipefail
@@ -144,23 +187,23 @@ jobs:
           echo "$RUNNER_TEMP/apksigcopier-venv/bin" >> "$GITHUB_PATH"
 
       - name: Compare rebuilt APK with the reference signature
-        if: steps.inputs.outcome == 'success'
+        if: steps.authorization.outputs.allowed == 'true' && steps.inputs.outcome == 'success'
         id: comparison
         shell: bash
         run: |
           set -euo pipefail
           echo '--- Generated unsigned APK ---'
           sha256sum "${{ steps.built.outputs.path }}"
-          stat --printf='Size: %s bytes\n' "${{ steps.built.outputs.path }}"
+          stat --printf='Size: %s bytes\\n' "${{ steps.built.outputs.path }}"
           echo '--- Reference APK ---'
           sha256sum comparison/reference.apk
-          stat --printf='Size: %s bytes\n' comparison/reference.apk
+          stat --printf='Size: %s bytes\\n' comparison/reference.apk
           apksigcopier compare --unsigned comparison/reference.apk "${{ steps.built.outputs.path }}"
           echo "result=PASS" >> "$GITHUB_OUTPUT"
           echo "APK_REPRODUCIBILITY_RESULT=PASS"
 
   report:
-    if: always() && github.event.issue.pull_request == null && github.event.comment.body == '/verify' && contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association)
+    if: always() && github.event_name == 'issue_comment' && github.event.issue.pull_request == null && contains(fromJSON('["verify","/verify","VERIFY","/VERIFY","Verify","/Verify"]'), github.event.comment.body)
     needs: verify
     name: Comment result on the issue
     runs-on: ubuntu-latest
@@ -171,6 +214,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
+          AUTHORIZED: ${{ needs.verify.outputs.authorized }}
+          AUTHORIZATION_REASON: ${{ needs.verify.outputs.authorization_reason }}
           VERIFY_RESULT: ${{ needs.verify.result }}
           INPUTS_OUTCOME: ${{ needs.verify.outputs.inputs_outcome }}
           SOURCE_URL: ${{ needs.verify.outputs.source_url }}
@@ -179,18 +224,24 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if [ "$VERIFY_RESULT" = "success" ] && [ "$INPUTS_OUTCOME" = "success" ]; then
-            status="SUCCESS"
-            details="The unsigned APK rebuilt from the supplied commit passed the reference APK signature comparison."
+          if [ "$AUTHORIZED" != "true" ]; then
+            body="🔒 Verification not started. $AUTHORIZATION_REASON Only users with write access or higher can start it."
+            reaction="eyes"
+          elif [ "$VERIFY_RESULT" = "success" ] && [ "$INPUTS_OUTCOME" = "success" ]; then
+            body="## ✅ APK verification passed
+
+          The rebuilt unsigned APK passed the reference signature comparison."
+            reaction="+1"
           else
-            status="FAILED"
-            details="The source build, input validation, or APK comparison failed. Open the workflow run for the exact failing step and logs."
+            body="## ❌ APK verification failed
+
+          The input validation, source build, or APK comparison failed. Open the workflow run for the failing step and logs."
+            reaction="-1"
           fi
+
           {
             echo "<!-- apk-reproducibility-result -->"
-            echo "## APK reproducibility result: $status"
-            echo
-            echo "$details"
+            echo "$body"
             echo
             [ -z "$SOURCE_URL" ] || echo "- Source commit: $SOURCE_URL"
             [ -z "$APK_URL" ] || echo "- Reference APK: $APK_URL"
@@ -204,4 +255,9 @@ jobs:
           else
             gh issue comment "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" \
               --body-file "$RUNNER_TEMP/issue-comment.md"
+          fi
+
+          if [ "$AUTHORIZED" = "true" ]; then
+            gh api --method POST "repos/$GITHUB_REPOSITORY/issues/$ISSUE_NUMBER/reactions" \
+              -f content="$reaction" >/dev/null
           fi
