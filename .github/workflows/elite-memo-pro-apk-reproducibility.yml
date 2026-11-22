@@ -39,7 +39,7 @@ jobs:
           body = event["issue"].get("body") or ""
 
           def field(label):
-              match = re.search(rf"(?m)^### {re.escape(label)}\\s*\\n+([^\\n]+)", body)
+              match = re.search(rf"(?m)^### {re.escape(label)}\s*\n+([^\n]+)", body)
               if not match:
                   raise SystemExit(f"Missing issue-form field: {label}")
               value = match.group(1).strip()
@@ -61,10 +61,10 @@ jobs:
               raise SystemExit("Reference APK URL must be a direct HTTPS URL ending in .apk")
 
           with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as out:
-              out.write(f"source_repo={parts[0]}/{parts[1]}\\n")
-              out.write(f"source_sha={parts[3].lower()}\\n")
-              out.write(f"source_url={source_url}\\n")
-              out.write(f"apk_url={apk_url}\\n")
+              out.write(f"source_repo={parts[0]}/{parts[1]}\n")
+              out.write(f"source_sha={parts[3].lower()}\n")
+              out.write(f"source_url={source_url}\n")
+              out.write(f"apk_url={apk_url}\n")
           PY
 
       - name: Set up JDK 25
@@ -108,7 +108,7 @@ jobs:
         run: |
           set -euo pipefail
           mapfile -t apks < <(
-            find source/app/build/outputs/apk/release -maxdepth 1 -type f \\
+            find source/app/build/outputs/apk/release -maxdepth 1 -type f \
               -name '*universal*release*unsigned.apk' -print | sort
           )
           if [ "${#apks[@]}" -ne 1 ]; then
@@ -123,7 +123,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p comparison
-          curl --fail --location --retry 3 --retry-all-errors \\
+          curl --fail --location --retry 3 --retry-all-errors \
             "${{ steps.inputs.outputs.apk_url }}" --output comparison/reference.apk
           test -s comparison/reference.apk
           file comparison/reference.apk
@@ -151,10 +151,10 @@ jobs:
           set -euo pipefail
           echo '--- Generated unsigned APK ---'
           sha256sum "${{ steps.built.outputs.path }}"
-          stat --printf='Size: %s bytes\\n' "${{ steps.built.outputs.path }}"
+          stat --printf='Size: %s bytes\n' "${{ steps.built.outputs.path }}"
           echo '--- Reference APK ---'
           sha256sum comparison/reference.apk
-          stat --printf='Size: %s bytes\\n' comparison/reference.apk
+          stat --printf='Size: %s bytes\n' comparison/reference.apk
           apksigcopier compare --unsigned comparison/reference.apk "${{ steps.built.outputs.path }}"
           echo "result=PASS" >> "$GITHUB_OUTPUT"
           echo "APK_REPRODUCIBILITY_RESULT=PASS"
@@ -199,9 +199,9 @@ jobs:
 
           existing_id="$(gh api "repos/$GITHUB_REPOSITORY/issues/$ISSUE_NUMBER/comments" --paginate --jq '.[] | select(.body | contains("<!-- apk-reproducibility-result -->")) | .id' | tail -n 1)"
           if [ -n "$existing_id" ]; then
-            gh api --method PATCH "repos/$GITHUB_REPOSITORY/issues/comments/$existing_id" \\
+            gh api --method PATCH "repos/$GITHUB_REPOSITORY/issues/comments/$existing_id" \
               -f body="$(cat "$RUNNER_TEMP/issue-comment.md")" >/dev/null
           else
-            gh issue comment "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" \\
+            gh issue comment "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" \
               --body-file "$RUNNER_TEMP/issue-comment.md"
           fi
