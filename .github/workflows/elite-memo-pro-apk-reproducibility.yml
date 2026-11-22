@@ -80,7 +80,7 @@ jobs:
           body = event["issue"].get("body") or ""
 
           def field(label):
-              match = re.search(rf"(?m)^### {re.escape(label)}\\s*\\n+([^\\n]+)", body)
+              match = re.search(rf"(?m)^### {re.escape(label)}\s*\n+([^\n]+)", body)
               if not match:
                   raise SystemExit(f"Missing issue-form field: {label}")
               value = match.group(1).strip()
@@ -102,10 +102,10 @@ jobs:
               raise SystemExit("Reference APK URL must be a direct HTTPS URL ending in .apk")
 
           with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as out:
-              out.write(f"source_repo={parts[0]}/{parts[1]}\\n")
-              out.write(f"source_sha={parts[3].lower()}\\n")
-              out.write(f"source_url={source_url}\\n")
-              out.write(f"apk_url={apk_url}\\n")
+              out.write(f"source_repo={parts[0]}/{parts[1]}\n")
+              out.write(f"source_sha={parts[3].lower()}\n")
+              out.write(f"source_url={source_url}\n")
+              out.write(f"apk_url={apk_url}\n")
           PY
 
       - name: Set up JDK 25
@@ -192,10 +192,10 @@ jobs:
           set -euo pipefail
           echo '--- Generated unsigned APK ---'
           sha256sum "${{ steps.built.outputs.path }}"
-          stat --printf='Size: %s bytes\\n' "${{ steps.built.outputs.path }}"
+          stat --printf='Size: %s bytes\n' "${{ steps.built.outputs.path }}"
           echo '--- Reference APK ---'
           sha256sum comparison/reference.apk
-          stat --printf='Size: %s bytes\\n' comparison/reference.apk
+          stat --printf='Size: %s bytes\n' comparison/reference.apk
           apksigcopier compare --unsigned comparison/reference.apk "${{ steps.built.outputs.path }}"
           echo "result=PASS" >> "$GITHUB_OUTPUT"
           echo "APK_REPRODUCIBILITY_RESULT=PASS"
