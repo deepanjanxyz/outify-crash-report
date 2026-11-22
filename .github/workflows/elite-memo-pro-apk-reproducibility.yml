@@ -44,24 +44,22 @@ jobs:
       apk_url: ${{ steps.inputs.outputs.apk_url }}
       inputs_outcome: ${{ steps.inputs.outcome }}
     steps:
-      - name: Confirm the commenter has write access
+      - name: Confirm the commenter is a repository owner or collaborator
         id: authorization
         env:
-          GH_TOKEN: ${{ github.token }}
-          COMMENT_AUTHOR: ${{ github.event.comment.user.login }}
+          AUTHOR_ASSOCIATION: ${{ github.event.comment.author_association }}
         shell: bash
         run: |
           set -euo pipefail
-          permission="$(gh api "repos/$GITHUB_REPOSITORY/collaborators/$COMMENT_AUTHOR/permission" --jq '.permission' 2>/dev/null || true)"
-          case "$permission" in
-            admin|maintain|write)
+          case "$AUTHOR_ASSOCIATION" in
+            OWNER|MEMBER|COLLABORATOR)
               echo "allowed=true" >> "$GITHUB_OUTPUT"
-              echo "reason=The commenter has $permission access." >> "$GITHUB_OUTPUT"
+              echo "reason=GitHub identifies the commenter as $AUTHOR_ASSOCIATION." >> "$GITHUB_OUTPUT"
               ;;
             *)
               echo "allowed=false" >> "$GITHUB_OUTPUT"
-              echo "reason=Write access could not be confirmed (GitHub returned: ${permission:-no permission})." >> "$GITHUB_OUTPUT"
-              echo "::warning::Verification was not started because the commenter does not have confirmed write access."
+              echo "reason=GitHub identifies the commenter as $AUTHOR_ASSOCIATION; repository ownership or collaboration is required." >> "$GITHUB_OUTPUT"
+              echo "::warning::Verification was not started because the commenter is not a recognized repository owner or collaborator."
               ;;
           esac
 
