@@ -1,0 +1,26 @@
+name: APK reproducibility check
+description: Build an unsigned APK from an exact source commit and compare it with a reference APK.
+title: "APK reproducibility check"
+labels:
+  - apk-verification
+body:
+  - type: input
+    id: source_commit_url
+    attributes:
+      label: Source commit URL
+      description: "GitHub commit URL. The exact 40-character commit SHA must be part of the URL."
+      placeholder: "https://github.com/OWNER/REPOSITORY/commit/0123456789abcdef0123456789abcdef01234567"
+    validations:
+      required: true
+      regex: "^https://github\\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+/commit/[0-9a-fA-F]{40}$"
+      regex_error: "Enter a GitHub commit URL containing the full 40-character commit SHA."
+  - type: input
+    id: reference_apk_url
+    attributes:
+      label: Reference APK URL
+      description: "Direct HTTPS download URL for the APK to compare against."
+      placeholder: "https://example.com/path/to/reference.apk"
+    validations:
+      required: true
+      regex: "^https://[^\\s]+\\.apk$"
+      regex_error: "Enter a direct HTTPS APK URL ending in .apk."
