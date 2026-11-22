@@ -26,7 +26,7 @@ jobs:
         uses: actions/checkout@v7.0.1
         with:
           repository: deepanjanxyz/notepad
-          ref: v1.0.32-rc01
+          ref: v1.0.33
           path: notepad
           persist-credentials: false
 
@@ -76,9 +76,9 @@ jobs:
           set -euo pipefail
           mkdir -p comparison
           curl --fail --location --retry 3 --retry-all-errors \
-            'https://github.com/deepanjanxyz/notepad/releases/download/v1.0.32-rc01/EliteMemoPro-v1.0.32-rc01-32-universal.apk' \
-            --output comparison/EliteMemoPro-v1.0.32-rc01-32-universal.apk
-          test -s comparison/EliteMemoPro-v1.0.32-rc01-32-universal.apk
+            'https://github.com/deepanjanxyz/notepad/releases/download/v1.0.33/EliteMemoPro-v1.0.33-33-universal.apk' \
+            --output comparison/EliteMemoPro-v1.0.33-33-universal.apk
+          test -s comparison/EliteMemoPro-v1.0.33-33-universal.apk
 
       - name: Install F-Droid APK signature verification tool
         shell: bash
@@ -100,7 +100,7 @@ jobs:
         shell: bash
         env:
           BUILT_APK: ${{ steps.built.outputs.path }}
-          RELEASE_APK: comparison/EliteMemoPro-v1.0.32-rc01-32-universal.apk
+          RELEASE_APK: comparison/EliteMemoPro-v1.0.33-33-universal.apk
         run: |
           set -euo pipefail
 
@@ -129,9 +129,9 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v7.0.2
         with:
-          name: elite-memo-pro-v1.0.32-rc01-universal-apk-verification
+          name: elite-memo-pro-v1.0.33-universal-apk-verification
           path: |
             ${{ steps.built.outputs.path }}
-            comparison/EliteMemoPro-v1.0.32-rc01-32-universal.apk
+            comparison/EliteMemoPro-v1.0.33-33-universal.apk
           if-no-files-found: ignore
           retention-days: 7
