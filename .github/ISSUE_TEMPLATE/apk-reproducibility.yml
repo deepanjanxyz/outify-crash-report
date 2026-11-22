@@ -2,6 +2,11 @@ name: APK reproducibility check
 description: Build an unsigned APK from an exact source commit and compare it with a reference APK.
 title: "APK reproducibility check"
 body:
+  - type: markdown
+    attributes:
+      value: |
+        After opening this issue, the bot will add an 👀 reaction and explain how to start verification.
+        A repository user with **write access or higher** must comment `verify` to start the workflow.
   - type: input
     id: source_commit_url
     attributes:
